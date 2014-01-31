@@ -1,0 +1,11 @@
+tmp
+*.pdf
+*.log
+*.html
+tags
+vendor/plugins/*
+# my custom ignore files/directories
+public/ext/*
+log
+doc
+coverage

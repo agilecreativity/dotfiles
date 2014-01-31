@@ -1,0 +1,8 @@
+# ln -fs ~/codes/agiledev/dotfiles/aprc ~/.aprc
+AwesomePrint.defaults = {
+  :indent => 2,
+  :color => {
+    :hash  => :pale,
+    :class => :white
+  }
+}

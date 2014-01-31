@@ -1,0 +1,67 @@
+[core]
+	excludesfile = ~/.gitignore_global
+  editor = /usr/bin/vim
+  quotepath = false
+
+[push]
+  default = simple
+  # Only push branches that have been set up to track a remote branch.
+  #default = tracking
+
+[user]
+  email= agilecreativity@gmail.com
+  name = Burin Choomnuan
+
+[color]
+  ui = true
+
+[branch]
+  autosetuprebase = always
+
+[github]
+  user = agilecreativity
+
+[alias]
+  co = checkout
+  # Log display from screencast, with train tracks.
+  l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
+
+  # Alternate log display from Scott Chacon
+  lol = log --pretty=oneline --abbrev-commit --graph --decorate
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+
+  # Other useful aliases:
+  unstage = reset HEAD
+  staged = diff --cached
+  unstaged = diff
+  current-branch = !git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'
+
+  # Usage: git track origin/feature-123-login-form
+  track = checkout -t
+
+[apply]
+  whitespace = warn
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  ui = always
+
+[help]
+  autocorrect = 1
+
+[status]
+  submodule = 1
+
+[giggle]
+  main-window-maximized = false
+  main-window-geometry = 1614x921+1281+83
+  history-view-vpane-position = 310
+  file-view-vpane-position = 807
+  main-window-view = HistoryView
+
+[git-up "bundler"]
+	check = true
+
+# vi: ft=dosini ts=2 sw=2 et

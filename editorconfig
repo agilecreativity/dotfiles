@@ -1,0 +1,30 @@
+; See: https://github.com/maksimr/vim-jsbeautify
+; Note: ln -s ~/Copy/dotfiles/editorconfig ~/.editorconfig
+; or    ln -s ~/Copy/dotfiles/editorconfig ~/.vim/.editorconfig
+; .editorconfig
+root = true
+
+[**.js]
+indent_style = space
+indent_size = 2
+preserve_newlines = false
+max_preseve_newlines = 10
+brace_style = collapse
+keep_array_indentation = true
+keep_function_indentation = true
+jslint_happy = true
+unescape_strings = true
+
+[**.css]
+indent_style = space
+indent_size = 2
+preserve_newlines = false
+keep_array_indentation = true
+keep_function_indentation = true
+
+[**.html]
+indent_style = space
+indent_size = 2
+max_char = 78
+;brace_style = expand
+brace_style = collapse
