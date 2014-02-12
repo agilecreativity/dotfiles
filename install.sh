@@ -1,23 +1,28 @@
 #/usr/bin/env bash
-# Simple installation script for my dotfiles
-PUBLIC_DOTFILES=$HOME/codes/agiledev/dotfiles
+DOTFILES=$HOME/dotfiles
 
-# Use Dropbox for custom aliase/environment
-PRIVATE_DOTFILES=$HOME/Dropbox/dotfiles
-
-# Remove existing symlinks first
+# Remove existing symlinks first! (destructive)
 rm -rf ~/.bin
 rm -rf ~/.zsh.d
 rm -rf ~/.aprc
 rm -rf ~/.gitconfig
+rm -rf ~/.ackrc
+rm -rf ~/.zshrc
+rm -rf ~/.gitconfig
+rm -rf ~/.agignore
+rm -rf ~/.gitignore
+rm -rf ~/.tmux.conf
+rm -rf ~/.editorconfig
 
-ln -fs $PUBLIC_DOTFILES/bin              $HOME/.bin
-ln -fs $PUBLIC_DOTFILES/zsh/zshrc        $HOME/.zshrc
-ln -fs $PUBLIC_DOTFILES/ack/ackrc        $HOME/.ackrc
-ln -fs $PUBLIC_DOTFILES/aprc             $HOME/.aprc
-ln -fs $PUBLIC_DOTFILES/agignore         $HOME/.agignore
-ln -fs $PUBLIC_DOTFILES/gitconfig        $HOME/.gitconfig
-ln -fs $PUBLIC_DOTFILES/gitignore_global $HOME/.gitignore_global
-ln -fs $PRIVATE_DOTFILES/zsh/zsh.d       $HOME/.zsh.d
+ln -s $DOTFILES/bin            $HOME/.bin
+ln -s $DOTFILES/zsh/zshrc      $HOME/.zshrc
+ln -s $DOTFILES/zsh/zsh.d      $HOME/.zsh.d
+ln -s $DOTFILES/ack/ackrc      $HOME/.ackrc
+ln -s $DOTFILES/aprc           $HOME/.aprc
+ln -s $DOTFILES/agignore       $HOME/.agignore
+ln -s $DOTFILES/gitconfig      $HOME/.gitconfig
+ln -s $DOTFILES/gitignore      $HOME/.gitignore
+ln -s $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
+ln -s $DOTFILES/editorconfig   $HOME/.editorconfig
 
-git config --global core.excludesfile '~/.gitignore_global'
+git config --global core.excludesfile '~/.gitignore'

@@ -1,12 +1,10 @@
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/.gitignore
   editor = /usr/bin/vim
   quotepath = false
 
 [push]
   default = simple
-  # Only push branches that have been set up to track a remote branch.
-  #default = tracking
 
 [user]
   email= agilecreativity@gmail.com

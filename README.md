@@ -6,34 +6,43 @@ to your own environment when applicable.
 
 ## Installation
 
+Run the following command:
+
+```
+git clone https://github.com/agilecreativity/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+./install.sh
+```
+
+See the file `install.sh` for more detail.
+
 ``` install.sh
 #/usr/bin/env bash
-# location of the dotfiles
-PUBLIC_DOTFILES=$HOME/Copy/projects/dotfiles
+DOTFILES=$HOME/Copy/projects/dotfiles
 
-# Use Dropbox for custom aliase e.g. work (Ubuntu) vs home (Mac)
-PRIVATE_DOTFILES=$HOME/Dropbox/dotfiles
-
-# Remove existing links first
+# Remove existing symlinks first! (destructive)
 rm -rf ~/.bin
 rm -rf ~/.zsh.d
+rm -rf ~/.aprc
+rm -rf ~/.gitconfig
+rm -rf ~/.ackrc
+rm -rf ~/.zshrc
+rm -rf ~/.gitconfig
+rm -rf ~/.agignore
+rm -rf ~/.gitignore
+rm -rf ~/.tmux.conf
+rm -rf ~/.editorconfig
 
-ln -fs $PUBLIC_DOTFILES/bin              $HOME/.bin
-ln -fs $PUBLIC_DOTFILES/zsh/zshrc        $HOME/.zshrc
-ln -fs $PUBLIC_DOTFILES/vim/vimrc        $HOME/.vimrc
-ln -fs $PUBLIC_DOTFILES/ack/ackrc        $HOME/.ackrc
-ln -fs $PUBLIC_DOTFILES/agignore         $HOME/.agignore
-ln -fs $PUBLIC_DOTFILES/tmux/tmux.conf   $HOME/.tmux.conf
-ln -fs $PUBLIC_DOTFILES/gitignore_global $HOME/.gitignore_global
+ln -s $DOTFILES/bin            $HOME/.bin
+ln -s $DOTFILES/zsh/zshrc      $HOME/.zshrc
+ln -s $DOTFILES/zsh/zsh.d      $HOME/.zsh.d
+ln -s $DOTFILES/ack/ackrc      $HOME/.ackrc
+ln -s $DOTFILES/aprc           $HOME/.aprc
+ln -s $DOTFILES/agignore       $HOME/.agignore
+ln -s $DOTFILES/gitconfig      $HOME/.gitconfig
+ln -s $DOTFILES/gitignore      $HOME/.gitignore
+ln -s $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
+ln -s $DOTFILES/editorconfig   $HOME/.editorconfig
 
-# Link to private dotfiles for extra aliases/credential that should not be shared.
-ln -fs $PRIVATE_DOTFILES/zsh/zsh.d       $HOME/.zsh.d
-
-git config --global core.excludesfile '~/.gitignore_global'
-```
-## Post installation
-Link the gitignore_global as:
-
-``` post-install.sh
-git config --global core.excludesfile '~/.gitignore_global'
+git config --global core.excludesfile '~/.gitignore'
 ```
