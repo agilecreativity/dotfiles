@@ -46,10 +46,10 @@ export PATH=$HOME/.bin:$PATH
 
 # Make the ls command look prettier with solarized color scheme
 if [[ $(uname) == "Linux" ]]; then
-  eval `dircolors ~/dotfiles/dircolors-solarized/dircolors.256dark`
-  #eval `dircolors ~/dotfiles/dircolors-solarized/dircolors.ansi-dark`
+  eval `dircolors ~/dotfiles/dircolors/dircolors.256dark`
+  #eval `dircolors ~/dotfiles/dircolors/dircolors.ansi-dark`
 fi
 
 ## Elixir related settings {{{
-export PATH=$SPIKES_HOME/elixir/bin:$PATH
+export PATH=$SPIKES_HOME/erlang-projects/elixir/bin:$PATH
 ## }}}
