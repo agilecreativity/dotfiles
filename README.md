@@ -18,7 +18,7 @@ See the file `install.sh` for more detail.
 
 ``` install.sh
 #/usr/bin/env bash
-DOTFILES=$HOME/Copy/projects/dotfiles
+DOTFILES=$HOME/dotfiles
 
 # Remove existing symlinks first! (destructive)
 rm -rf ~/.bin
