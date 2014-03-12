@@ -32,6 +32,7 @@ export PATH=$ANDROID_SDK_HOME/tools:$PATH
 export SPIKES_HOME=~/Copy/spikes
 export PATH=$HOME/Dropbox/dotfiles/scripts:$PATH
 export PATH=$HOME/apps/bin:$PATH
+export PATH=$HOME/apps/wkhtmltox/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/.bin:$PATH
 

@@ -47,6 +47,7 @@ plugins=(colorize \
          gitignore \
          git-flow \
          gnu-utils \
+         rake \
          rails \
          rbenv \
          sublime \
@@ -73,3 +74,4 @@ if [ -d ~/.zsh.d ]; then
   done
   unset i
 fi
+
