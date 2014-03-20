@@ -58,3 +58,12 @@ fi
 ## Elixir related settings {{{
 export PATH=$SPIKES_HOME/erlang-projects/elixir/bin:$PATH
 ## }}}
+
+## Misc settings {{{
+platform=`uname`
+if [[ $platform == 'Linux' ]]; then
+  alias a='ls -lrth --color'
+elif [[ $platform == 'Darwin' ]]; then
+  alias a='ls -lrthG'
+fi
+## }}}
