@@ -39,4 +39,6 @@ RDOC=rdoc
 --ignore-dir=docs/build
 --ignore-dir=migrations
 --ignore-dir=log
-
+# My custom ignore
+--ignore-dir=coverage
+--ignore-dir=doc
