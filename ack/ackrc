@@ -43,6 +43,7 @@ RDOC=rdoc
 --ignore-dir=coverage
 --ignore-dir=doc
 --ignore-dir=tmp
+--ignore-dir=vendor
 # Custom files to ignore
 --ignore-file=is:tags
 --ignore-file=ext:pdf
