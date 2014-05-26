@@ -35,6 +35,7 @@ RDOC=rdoc
 --ignore-dir=public/media/cache
 --ignore-dir=public/static/cache
 --ignore-dir=public/assets
+--ignore-dir=public/system
 --ignore-dir=build/html
 --ignore-dir=docs/build
 --ignore-dir=migrations
@@ -44,6 +45,7 @@ RDOC=rdoc
 --ignore-dir=doc
 --ignore-dir=tmp
 --ignore-dir=vendor
+--ignore-dir=.bundle
 # Custom files to ignore
 --ignore-file=is:tags
 --ignore-file=ext:pdf
