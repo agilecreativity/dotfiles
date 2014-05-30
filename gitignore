@@ -45,3 +45,6 @@ tags
 *~
 *.swp
 *.swo
+
+# Custom ignore files
+aliases.sh
