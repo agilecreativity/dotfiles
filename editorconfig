@@ -6,12 +6,14 @@ root = true
 
 [**.js]
 indent_style = space
-indent_size = 2
+indent_size = 4
 preserve_newlines = false
 max_preseve_newlines = 10
+max_char = 78
 brace_style = collapse
-keep_array_indentation = true
-keep_function_indentation = true
+;brace_style = expand
+keep_array_indentation = false
+keep_function_indentation = false
 jslint_happy = true
 unescape_strings = true
 
