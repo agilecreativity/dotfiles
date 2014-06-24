@@ -1,5 +1,4 @@
 # See: https://help.github.com/articles/ignoring-files
-
 # Compiled source #
 ###################
 *.com
@@ -47,4 +46,5 @@ tags
 *.swo
 
 # Custom ignore files
-aliases.sh
+zsh/zsh.d/env.sh
+zsh/zsh.d/aliases.sh

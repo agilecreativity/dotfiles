@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 # From: Gary Bernhardt's dotfiles
-
 class WhoDoneIt
   PATTERN = ARGV.fetch(0)
 

@@ -1,5 +1,5 @@
-dotfiles
-========
+## dotfiles
+
 This is my dotfiles that I used for quite a while. If you like to use it please
 follow the simple instruction for installation. You may have to edit/adjust
 to your own environment when applicable.

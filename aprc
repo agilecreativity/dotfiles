@@ -1,4 +1,4 @@
-# ln -fs ~/codes/agiledev/dotfiles/aprc ~/.aprc
+# ln -fs ~/codes/bitbucket/dotfiles/aprc ~/.aprc
 AwesomePrint.defaults = {
   :indent => 2,
   :color => {

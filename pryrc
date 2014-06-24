@@ -19,7 +19,6 @@ end
 
 if defined?(Rails) && Rails.env
   require 'logger'
-
   if defined?(ActiveRecord)
     ActiveRecord::Base.logger = Logger.new(STDOUT)
     ActiveRecord::Base.clear_active_connections!
@@ -28,5 +27,4 @@ if defined?(Rails) && Rails.env
   if defined?(DataMapper)
     DataMapper::Logger.new($stdout, :debug)
   end
-
 end

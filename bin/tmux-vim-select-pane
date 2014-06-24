@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
-# See: https://gist.github.com/mislav/5189704
-#      https://gist.github.com/mislav/5189704/raw/install.sh
+# Credit:
+# https://gist.github.com/mislav/5189704
+# https://gist.github.com/mislav/5189704/raw/install.sh
+#
 # Like `tmux select-pane`, but if Vim is running in the current pane it sends
 # a `<C-h/j/k/l>` keystroke to Vim instead.
 set -e
