@@ -20,7 +20,7 @@
   user = agilecreativity
 
 [alias]
-  co = checkout
+	co = checkout
   # Log display from screencast, with train tracks.
   l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
 
@@ -30,21 +30,33 @@
 
   # Other useful aliases:
   unstage = reset HEAD
-  staged = diff --cached
+	staged = diff --cached
   unstaged = diff
   current-branch = !git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'
 
   # Usage: git track origin/feature-123-login-form
   track = checkout -t
+	st = status
+	ci = commit
+	cam = commit -a -m
+	praise = blame
+	both = diff HEAD
+	oneline = log --oneline
+	amend = commit --amend
+	undo = reset --hard HEAD^
+	tree = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	myhist = !git log --author=\"$(git config user.name)\" --format=%H |xargs git show --name-only --format=-------------%n%Cred%s%Creset%n%Cblue%h%Creset
+	cb = checkout -b
 
 [apply]
   whitespace = warn
 
 [color]
-  diff = auto
-  status = auto
-  branch = auto
+	diff = auto
+	status = auto
+	branch = auto
   ui = always
+	interactive = auto
 
 [help]
   autocorrect = 1
@@ -63,3 +75,10 @@
 	check = true
 
 # vi: ft=dosini ts=2 sw=2 et
+[log]
+	decorate = short
+[pager]
+	status = true
+	show-branch = true
+[format]
+	numbered = auto
