@@ -24,14 +24,14 @@ plugins=(bundle \
 
 source $ZSH/oh-my-zsh.sh
 
-# Settings for rbenv {{{
-export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/.rbenv:$PATH"
-eval "$(rbenv init -)"
-
 # Note: see the offending /etc/zsh/zshenv
 # comment them out so that the $gem env work correctly inside tmux
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # }}}
+
+# Settings for rbenv {{{
+export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/.rbenv:$PATH"
+eval "$(rbenv init -)"
 
 # Load common environment variable (if any)
 # $ln -s ~/dotfiles/zsh/env.sh ~/.env.sh
