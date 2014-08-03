@@ -18,10 +18,8 @@ alias be=' bundle exec'
 alias ber='bundle exec rake'
 
 # Quickly navigate to the installed ruby gems
-alias v19='cd ~/.rbenv/versions/1.9.3/lib/ruby/gems/1.9.1/gems/;vim .'
-alias v20='cd ~/.rbenv/versions/2.0.0/lib/ruby/gems/2.0.0/gems/;vim .'
-alias v21='cd ~/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/;vim .'
 alias v22='cd ~/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/;vim .'
+alias g22='cd ~/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/'
 # }}}
 
 # Git related aliases {{{
