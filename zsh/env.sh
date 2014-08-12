@@ -20,3 +20,6 @@ export KEYTIMEOUT=1
 
 # Fix the vim's color when running under tmux
 export TERM=screen-256color
+
+# Don't clear screen after a command (better with `git status`)
+export LESS=-RX
