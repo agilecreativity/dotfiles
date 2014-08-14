@@ -6,6 +6,7 @@ export VISUAL=vi
 
 # Bind the key to Vi for Zsh instead of Emacs!
 bindkey -v
+
 # Experiment settings {{{
 bindkey '^P' up-history
 bindkey '^N' down-history

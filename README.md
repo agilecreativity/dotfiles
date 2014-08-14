@@ -46,15 +46,3 @@ ln -s $DOTFILES/editorconfig   $HOME/.editorconfig
 
 git config --global core.excludesfile '~/.gitignore'
 ```
-
-## Useful links
-
-- [git_pretty_accept][]
-- [best way to merge a github pull-request][]
-- [simple git branching model][]
-- [branch_handling][]
-
-[git_pretty_accept]: https://github.com/lovewithfood/git_pretty_accept
-[best way to merge a github pull-request]: http://differential.io/blog/best-way-to-merge-a-github-pull-request
-[simple git branching model]: https://gist.github.com/jbenet/ee6c9ac48068889b0912
-[branch_handling]: https://gist.github.com/tjmcewan/6459975
