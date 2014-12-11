@@ -40,9 +40,9 @@ if [ -r ~/.env.sh ]; then
 fi
 
 # $ln -s ~/dotfiles/zsh/aliases.sh ~/.aliases.sh
-if [ -r ~/.aliases.sh ]; then
-  source ~/.aliases.sh
-fi
+# if [ -r ~/.aliases.sh ]; then
+#   source ~/.aliases.sh
+# fi
 
 # Load custom scripts from the a given directory {{{
 # $ln -s ~/codes/bitbucket/private-dotfiles/zsh/config/ ~/.zsh.d
@@ -55,3 +55,10 @@ if [ -d ~/.zsh.d ]; then
   unset i
 fi
 # }}}
+
+## Slingshot {{{
+export PATH=$PATH:$HOME/codes/reinteractive/slingshot/bin:
+[[ -f /Users/agilecreativity/codes/reinteractive/slingshot/bin/slingshot ]] && eval "$(/Users/agilecreativity/codes/reinteractive/slingshot/bin/slingshot init -)"
+## }}}
+
+alias run-playbook='ansible-playbook --vault-password-file ~/.vault_pass.txt -vvvv'

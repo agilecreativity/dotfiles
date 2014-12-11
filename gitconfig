@@ -89,3 +89,7 @@
 	show-branch = true
 [format]
 	numbered = auto
+[filter "media"]
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true

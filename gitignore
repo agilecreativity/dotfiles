@@ -50,3 +50,7 @@ tags
 # My custom ignore files
 zsh/zsh.d/env.sh
 zsh/zsh.d/aliases.sh
+
+# Custom start script
+start-server.sh
+start-resque.sh

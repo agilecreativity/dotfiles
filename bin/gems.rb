@@ -25,7 +25,7 @@ end
 
 if __FILE__ == $0
   # oldest version -> most recent version
-  versions = %w(1.9.3 2.1.2)
+  versions = %w(1.9.3 2.1.4)
   versions.each do |version|
     puts "Installing gems for ruby version #{version}"
     `rbenv local #{version}`
