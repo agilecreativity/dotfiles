@@ -1,6 +1,7 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="bira"
+
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
@@ -55,10 +56,3 @@ if [ -d ~/.zsh.d ]; then
   unset i
 fi
 # }}}
-
-## Slingshot {{{
-export PATH=$PATH:$HOME/codes/reinteractive/slingshot/bin:
-[[ -f /Users/agilecreativity/codes/reinteractive/slingshot/bin/slingshot ]] && eval "$(/Users/agilecreativity/codes/reinteractive/slingshot/bin/slingshot init -)"
-## }}}
-
-alias run-playbook='ansible-playbook --vault-password-file ~/.vault_pass.txt -vvvv'

@@ -84,12 +84,18 @@
 # vi: ft=dosini ts=2 sw=2 et
 [log]
 	decorate = short
+
 [pager]
 	status = true
 	show-branch = true
+
 [format]
 	numbered = auto
+
 [filter "media"]
 	clean = git media clean %f
 	smudge = git media smudge %f
 	required = true
+
+[heroku]
+	account = work

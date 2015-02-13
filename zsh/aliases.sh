@@ -59,15 +59,17 @@ alias gcp='git commit -am 'WIP' && git push'
 alias gcm='git commit -m  'WIP''
 # }}}
 
-# Misc aliases {{{
+## Misc aliases {{{
 alias sz='source ~/.zshrc'
 alias git-where-was-i='git log --no-merges --author=$USER'
 alias omz='vim ~/.oh-my-zsh/'
 alias t-kill='tmux kill-session -t'
 # See: http://usevim.com/2012/03/21/git-and-vimdiff/
 alias v-changed='vim -p `git diff --name-only | grep -v Gemfile`'
+alias run-playbook='ansible-playbook --vault-password-file ~/.vault_pass.txt -vvvv'
+## }}}
 
-# Misc settings {{{
+## Platform specific settings {{{
 platform=`uname`
 if [[ $platform == 'Linux' ]]; then
   alias a='ls -lrth --color'
