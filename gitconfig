@@ -99,3 +99,6 @@
 
 [heroku]
 	account = work
+
+[pull]
+	rebase = true
