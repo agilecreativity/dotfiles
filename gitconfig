@@ -54,6 +54,7 @@
 	tree = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	myhist = !git log --author=\"$(git config user.name)\" --format=%H |xargs git show --name-only --format=-------------%n%Cred%s%Creset%n%Cblue%h%Creset
 	cb = checkout -b
+	s = status -s
 
 [apply]
   whitespace = warn
