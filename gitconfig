@@ -99,7 +99,7 @@
 	required = true
 
 [heroku]
-	account = work
+	account = personal
 
 [pull]
 	rebase = true
