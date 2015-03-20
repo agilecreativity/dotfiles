@@ -12,7 +12,11 @@
   name = Burin Choomnuan
 
 [color]
-  ui = true
+	diff = auto
+	status = auto
+	branch = auto
+  ui = always
+	interactive = auto
 
 [branch]
   autosetuprebase = always
@@ -105,3 +109,9 @@
 	rebase = true
 [rerere]
 	enabled = true
+
+[hub]
+protocol = https
+
+[credential]
+helper = /opt/boxen/bin/boxen-git-credential

@@ -4,9 +4,6 @@ set -e
 # The public dotfiles
 DOTFILES=$HOME/dotfiles
 
-# The private dotfiles
-PRIVATE_DOTFILES=$HOME/codes/bitbucket/private-dotfiles
-
 # Remove existing symlinks first! (destructive)
 rm -rf ~/.bin
 rm -rf ~/.zsh.d
@@ -33,6 +30,4 @@ ln -s $DOTFILES/gitconfig         $HOME/.gitconfig
 ln -s $DOTFILES/gitignore         $HOME/.gitignore
 ln -s $DOTFILES/tmux/tmux.conf    $HOME/.tmux.conf
 ln -s $DOTFILES/editorconfig      $HOME/.editorconfig
-ln -s $PRIVATE_DOTFILES/zsh/zsh.d $HOME/.zsh.d
-
 git config --global core.excludesfile '~/.gitignore'
