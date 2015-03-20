@@ -28,11 +28,16 @@ source $ZSH/oh-my-zsh.sh
 # Note: see the offending /etc/zsh/zshenv
 # comment them out so that the $gem env work correctly inside tmux
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-# }}}
 
-# Settings for rbenv {{{
-export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/.rbenv:$PATH"
-eval "$(rbenv init -)"
+## Settings for rbenv {{{
+platform=`uname`
+if [[ $platform == 'Linux' ]]; then
+  export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/.rbenv:$PATH"
+  eval "$(rbenv init -)"
+elif [[ $platform == 'Darwin' ]]; then
+  ## Use setting from Boxen
+fi
+## }}}
 
 # Load common environment variable (if any)
 # $ln -s ~/dotfiles/zsh/env.sh ~/.env.sh
@@ -40,13 +45,8 @@ if [ -r ~/.env.sh ]; then
   source ~/.env.sh
 fi
 
-# $ln -s ~/dotfiles/zsh/aliases.sh ~/.aliases.sh
-# if [ -r ~/.aliases.sh ]; then
-#   source ~/.aliases.sh
-# fi
-
-# Load custom scripts from the a given directory {{{
-# $ln -s ~/codes/bitbucket/private-dotfiles/zsh/config/ ~/.zsh.d
+## Load custom scripts from the a given directory {{{
+## $ln -s ~/codes/bitbucket/private-dotfiles/zsh/config/ ~/.zsh.d
 if [ -d ~/.zsh.d ]; then
   for i in ~/.zsh.d/*.sh; do
     if [ -r $i ]; then
@@ -55,4 +55,4 @@ if [ -d ~/.zsh.d ]; then
   done
   unset i
 fi
-# }}}
+## }}}
