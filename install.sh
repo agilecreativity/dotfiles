@@ -2,7 +2,7 @@
 set -e
 
 # The public dotfiles
-DOTFILES=$HOME/dotfiles
+DOTFILES=$HOME/apps/dotfiles
 
 # Remove existing symlinks first! (destructive)
 rm -rf ~/.bin
