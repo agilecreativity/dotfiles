@@ -1,5 +1,5 @@
 [core]
-	excludesfile = /opt/boxen/config/git/gitignore
+	excludesfile = ~/.gitignore
   editor = /usr/bin/vim
   quotepath = false
 	autocrlf = input

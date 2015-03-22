@@ -5,8 +5,8 @@ set -e
 DOTFILES=$HOME/apps/dotfiles
 
 # Remove existing symlinks first! (destructive)
+echo "Remove old symlinks..."
 rm -rf ~/.bin
-rm -rf ~/.zsh.d
 rm -rf ~/.aprc
 rm -rf ~/.gitconfig
 rm -rf ~/.ackrc
@@ -19,6 +19,7 @@ rm -rf ~/.gitignore
 rm -rf ~/.tmux.conf
 rm -rf ~/.editorconfig
 
+echo "Create new symlinks..."
 ln -s $DOTFILES/bin               $HOME/.bin
 ln -s $DOTFILES/zsh/zshrc         $HOME/.zshrc
 ln -s $DOTFILES/zsh/env.sh        $HOME/.env.sh
@@ -31,3 +32,4 @@ ln -s $DOTFILES/gitignore         $HOME/.gitignore
 ln -s $DOTFILES/tmux/tmux.conf    $HOME/.tmux.conf
 ln -s $DOTFILES/editorconfig      $HOME/.editorconfig
 git config --global core.excludesfile '~/.gitignore'
+echo "Done!"
