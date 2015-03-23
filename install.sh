@@ -18,6 +18,8 @@ rm -rf ~/.agignore
 rm -rf ~/.gitignore
 rm -rf ~/.tmux.conf
 rm -rf ~/.editorconfig
+# TODO: need to adjust this if running under Linux instead of OSX
+rm -rf ~/.xrayconfig
 
 echo "Create new symlinks..."
 ln -s $DOTFILES/bin               $HOME/.bin
@@ -31,5 +33,6 @@ ln -s $DOTFILES/gitconfig         $HOME/.gitconfig
 ln -s $DOTFILES/gitignore         $HOME/.gitignore
 ln -s $DOTFILES/tmux/tmux.conf    $HOME/.tmux.conf
 ln -s $DOTFILES/editorconfig      $HOME/.editorconfig
+ln -s $DOTFILES/xrayconfig        $HOME/.xrayconfig
 git config --global core.excludesfile '~/.gitignore'
 echo "Done!"
