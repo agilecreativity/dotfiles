@@ -54,3 +54,6 @@ zsh/zsh.d/aliases.sh
 # Custom start script
 start-server.sh
 start-resque.sh
+
+## Ag related file
+.agignore

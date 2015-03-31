@@ -9,3 +9,17 @@ public/ext/*
 log
 doc
 coverage
+
+## Custom ignore related to some projects
+*.svg
+
+## nodejs directories
+dist/
+app/assets/
+tests/_vendor/
+build/
+
+## specific libraries
+node_modules/
+app/lib/underscore.js
+app/config/schemas/master-schema.json
