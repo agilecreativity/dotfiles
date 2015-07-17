@@ -1,6 +1,10 @@
 [core]
-	excludesfile = ~/.gitignore
-  editor = /usr/bin/vim
+	excludesfile = /opt/boxen/config/git/gitignore
+  ## Note: this is normal path
+  #editor = /usr/bin/vim
+
+  ## If you are using vim from Boxen
+  editor = /opt/boxen/homebrew/bin/vim
   quotepath = false
 	autocrlf = input
 
