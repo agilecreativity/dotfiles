@@ -1,3 +1,4 @@
+#!/bin/bash
 # See: http://www.cs.elte.hu/zsh-manual/zsh_16.html
 # http://dougblack.io/words/zsh-vi-mode.html
 # http://zsh.sourceforge.net/Intro/intro_10.html
