@@ -54,7 +54,6 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/Users/bchoomnuan/apps/pro-scripts/private/vha:/opt/boxen/homebrew/bin:bin:/opt/boxen/rbenv/shims:/opt/boxen/rbenv/bin:/opt/boxen/ruby-build/bin:node_modules/.bin:/opt/boxen/nodenv/shims:/opt/boxen/nodenv/bin:/opt/boxen/homebrew/bin:/opt/boxen/homebrew/sbin:/opt/boxen/bin:/opt/go/bin:/Users/bchoomnuan/go/bin:/Users/bchoomnuan/.bin:/Users/bchoomnuan/bin:/Users/bchoomnuan/apps/bin:/Users/bchoomnuan/apps/tmux-starter:/Users/bchoomnuan/apps/pro-scripts/private:/Users/bchoomnuan/apps/pro-scripts/public:/opt/boxen/homebrew/opt/android-ndk/bin:/opt/boxen/homebrew/opt/android-ndk:/opt/boxen/homebrew/opt/android-sdk/tools:/opt/boxen/homebrew/opt/android-sdk/platform-tools:/opt/boxen/homebrew/opt/android-sdk/bin:/Users/bchoomnuan/.rbenv/shims:/Users/bchoomnuan/.rbenv/bin:/Users/bchoomnuan/.rbenv:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -88,7 +87,12 @@ source $ZSH/oh-my-zsh.sh
 ### Custom config start here {{{
 # Note: see the offending /etc/zsh/zshenv
 # comment them out so that the $gem env work correctly inside tmux
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
+## Common to both OSX/Ubuntu
+export PATH=$PATH:/usr/bin
+export PATH=$PATH:/usr/sbin
+export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/usr/local/sbin
 
 ## Settings for rbenv {{{
 platform=`uname`
@@ -96,8 +100,15 @@ if [[ $platform == 'Linux' ]]; then
   export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/.rbenv:$PATH"
   eval "$(rbenv init -)"
 elif [[ $platform == 'Darwin' ]]; then
-  ## Use setting from Boxen
-  export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/.rbenv:$PATH"
+  ## Use setting from Boxen if we are on OSX
+  export PATH=$PATH:$BOXEN_HOME/bin/
+  export PATH=$PATH:$BOXEN_HOME/homebrew/bin/
+  export PATH=$PATH:$BOXEN_HOME/homebrew/sbin/
+  export PATH=$PATH:$BOXEN_HOME/nodenv/bin/
+  export PATH=$PATH:$BOXEN_HOME/nodenv/shims/
+  export PATH=$PATH:$BOXEN_HOME/rbenv/bin/
+  export PATH=$PATH:$BOXEN_HOME/rbenv/shims/
+  export PATH=$PATH:$BOXEN_HOME/ruby-build/bin/
 fi
 ## }}}
 
