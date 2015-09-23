@@ -5,7 +5,7 @@ tmp
 tags
 vendor/plugins/*
 # my custom ignore files/directories
-public/ext/*
+#public/ext/*
 log
 doc
 coverage
@@ -15,11 +15,12 @@ coverage
 
 ## nodejs directories
 dist/
-app/assets/
-tests/_vendor/
+
+# TODO: turn this off for now, work better with VHA
+#app/assets/
+#tests/_vendor/
 build/
 
 ## specific libraries
 node_modules/
 app/lib/underscore.js
-app/config/schemas/master-schema.json
