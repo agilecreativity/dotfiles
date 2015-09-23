@@ -46,3 +46,9 @@ ln -s $DOTFILES/editorconfig   $HOME/.editorconfig
 
 git config --global core.excludesfile '~/.gitignore'
 ```
+
+### Note
+
+- [seoul256-gnome-terminal](https://github.com/anuragsoni/seoul256-gnome-terminal)
+- [Solarized Color for Gnome](git@github.com:Anthony25/gnome-terminal-colors-solarized.git)
+)
