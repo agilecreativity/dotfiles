@@ -76,7 +76,13 @@ if [[ $platform == 'Linux' ]]; then
   # Note: may be also $nautilus `pwd`
   alias n='nautilus . &> /dev/null'
   alias chrome='/usr/bin/google-chrome'
+  # If we are on Ubuntu/Linux may be we should use this
+  alias vim='/usr/local/bin/vim'
+  alias v='/usr/local/bin/vim'
 elif [[ $platform == 'Darwin' ]]; then
   alias a='ls -lrthG'
+  # Use the right path of Vim please
+  alias vim='/opt/boxen/homebrew/bin/vim'
+  alias v='/opt/boxen/homebrew/bin/vim'
 fi
 # }}}

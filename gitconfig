@@ -4,8 +4,9 @@
   #editor = /usr/bin/vim
 
   ## If you are using vim from Boxen
-  #editor = /opt/boxen/homebrew/bin/vim
-  editor = /usr/bin/vim
+  editor = /opt/boxen/homebrew/bin/vim
+
+  ## For ubuntu may be it is on /usr/local/bin/vim
   quotepath = false
 	autocrlf = input
 
