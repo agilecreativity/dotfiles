@@ -1,12 +1,12 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/bchoomnuan/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-# ZSH_THEME="robbyrussell"
-ZSH_THEME="avit"
+ZSH_THEME="robbyrussell"
+#ZSH_THEME="avit"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -101,16 +101,17 @@ elif [[ $platform == 'Darwin' ]]; then
 fi
 ## }}}
 
-# Load common environment variable (if any)
-# $ln -s ~/dotfiles/zsh/env.sh ~/.env.sh
-if [ -r ~/.env.sh ]; then
-  source ~/.env.sh
-fi
+## Custom Setting {{{
+export PATH=$HOME/apps/pro-scripts/public:$PATH
+export PATH=$HOME/apps/pro-scripts/private:$PATH
+export PATH=$HOME/apps/pro-scripts/private/vha/:$PATH
+export PATH=$HOME/apps/tmux-starter:$PATH
+export SPIKES_HOME=$HOME/codes/spikes/
+## }}}
 
-## Load custom scripts from the a given directory {{{
-## $ln -s ~/codes/bitbucket/private-dotfiles/zsh/config/ ~/.zsh.d
-if [ -d ~/.zsh.d ]; then
-  for i in ~/.zsh.d/*.sh; do
+### Load public configurations {{{
+if [ -d ~/apps/dotfiles/env/ ]; then
+  for i in ~/apps/dotfiles/env/*.sh; do
     if [ -r $i ]; then
       . $i
     fi
@@ -118,4 +119,14 @@ if [ -d ~/.zsh.d ]; then
   unset i
 fi
 ## }}}
-###--------------------------------------------------------------###
+
+## Load the private configurations {{{
+if [ -d ~/apps/private-dotfiles/env/ ]; then
+  for i in ~/apps/private-dotfiles/env/*.sh; do
+    if [ -r $i ]; then
+      . $i
+    fi
+  done
+  unset i
+fi
+## }}}
