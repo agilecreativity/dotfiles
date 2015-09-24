@@ -142,3 +142,5 @@ if [ -d ~/apps/private-dotfiles/env/ ]; then
   unset i
 fi
 ## }}}
+
+source $HOME/apps/pro-scripts/private/vha/vha-update-proxy
