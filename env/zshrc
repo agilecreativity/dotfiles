@@ -113,6 +113,7 @@ fi
 ## }}}
 
 ## Custom Setting {{{
+export PATH=$HOME/apps/dotfiles/bin/:$PATH
 export PATH=$HOME/apps/pro-scripts/public:$PATH
 export PATH=$HOME/apps/pro-scripts/private:$PATH
 export PATH=$HOME/apps/pro-scripts/private/vha/:$PATH
