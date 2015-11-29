@@ -50,7 +50,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git gitignore)
 
 # User configuration
 
@@ -89,10 +89,10 @@ source $ZSH/oh-my-zsh.sh
 # comment them out so that the $gem env work correctly inside tmux
 
 ## Common to both OSX/Ubuntu
-export PATH=$PATH:/usr/bin
-export PATH=$PATH:/usr/sbin
-export PATH=$PATH:/usr/local/bin
-export PATH=$PATH:/usr/local/sbin
+export PATH=/usr/bin:$PATH
+export PATH=/usr/sbin:$PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
 
 ## Settings for rbenv {{{
 platform=`uname`
@@ -101,24 +101,24 @@ if [[ $platform == 'Linux' ]]; then
   eval "$(rbenv init -)"
 elif [[ $platform == 'Darwin' ]]; then
   ## Use setting from Boxen if we are on OSX
-  export PATH=$PATH:$BOXEN_HOME/bin/
-  export PATH=$PATH:$BOXEN_HOME/homebrew/bin/
-  export PATH=$PATH:$BOXEN_HOME/homebrew/sbin/
-  export PATH=$PATH:$BOXEN_HOME/nodenv/bin/
-  export PATH=$PATH:$BOXEN_HOME/nodenv/shims/
-  export PATH=$PATH:$BOXEN_HOME/rbenv/bin/
-  export PATH=$PATH:$BOXEN_HOME/rbenv/shims/
-  export PATH=$PATH:$BOXEN_HOME/ruby-build/bin/
+  export PATH=$BOXEN_HOME/bin/:$PATH
+  export PATH=$BOXEN_HOME/homebrew/bin:$PATH
+  export PATH=$BOXEN_HOME/homebrew/sbin:$PATH
+  export PATH=$BOXEN_HOME/nodenv/bin:$PATH
+  export PATH=$BOXEN_HOME/nodenv/shims:$PATH
+  export PATH=$BOXEN_HOME/rbenv/bin:$PATH
+  export PATH=$BOXEN_HOME/rbenv/shims:$PATH
+  export PATH=$BOXEN_HOME/ruby-build/bin:$PATH
 fi
 ## }}}
 
 ## Custom Setting {{{
-export PATH=$HOME/apps/dotfiles/bin/:$PATH
+export PATH=$HOME/apps/dotfiles/bin:$PATH
 export PATH=$HOME/apps/pro-scripts/public:$PATH
 export PATH=$HOME/apps/pro-scripts/private:$PATH
-export PATH=$HOME/apps/pro-scripts/private/vha/:$PATH
+export PATH=$HOME/apps/pro-scripts/private/vha:$PATH
 export PATH=$HOME/apps/tmux-starter:$PATH
-export SPIKES_HOME=$HOME/codes/spikes/
+export SPIKES_HOME=$HOME/codes/spikes
 ## }}}
 
 ### Load public configurations {{{
@@ -133,7 +133,7 @@ fi
 ## }}}
 
 ## Load the private configurations {{{
-if [ -d ~/apps/private-dotfiles/env/ ]; then
+if [ -d ~/apps/private-dotfiles/env ]; then
   for i in ~/apps/private-dotfiles/env/*.sh; do
     if [ -r $i ]; then
       . $i
@@ -143,4 +143,26 @@ if [ -d ~/apps/private-dotfiles/env/ ]; then
 fi
 ## }}}
 
-source $HOME/apps/pro-scripts/private/vha/vha-update-proxy
+# For using with Android Studio
+if [[ $platform == 'Darwin' ]]; then
+  ## For testing with Emacs
+  #unset GEM_HOME
+  #unset GEM_PATH
+  #export PATH=/usr/local/bin:/opt/boxen/rbenv/shims:$PATH
+  export ANDROID_HOME=$HOME/Library/Android/sdk
+  export PATH=$ANDROID_HOME/bin:$PATH
+  export PATH=$ANDROID_HOME/platform-tools:$PATH
+  export PATH=$ANDROID_HOME/tools:$PATH
+
+  ## Setup proxy for VHA
+  # export http_proxy=http://internal-proxy.dc.vodafone.com.au:8080
+  # export HTTP_PROXY=http://internal-proxy.dc.vodafone.com.au:8080
+  # export HTTPS_PROXY=http://internal-proxy.dc.vodafone.com.au:8080
+  # export https_proxy=http://internal-proxy.dc.vodafone.com.au:8080
+fi
+
+##source $HOME/apps/pro-scripts/private/vha/vha-update-proxy
+
+## For NPM
+#npm config set proxy       internal-proxy.dc.vodafone.com.au:8080
+#npm config set https-proxy internal-proxy.dc.vodafone.com.au:8080

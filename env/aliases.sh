@@ -1,70 +1,104 @@
+## Quick navigation {{{
+alias g-dem='cd ~/.emacs.d/'
+alias g-desktop='cd ~/Desktop/'
+alias g-dotfiles-pri='cd ~/apps/private-dotfiles/'
+alias g-dotfiles='cd ~/apps/dotfiles/'
+alias g-download='cd ~/Downloads/'
+alias g-dropbox='cd ~/Dropbox/'
+alias g-dv='cd ~/dotvim/'
+alias g-scripts='cd ~/apps/pro-scripts/'
+alias g-tmux-starter='cd ~/apps/tmux-starter/'
+
+alias g-s-cj='cd ~/codes/spikes/clojure/'
+alias g-s-em='cd ~/codes/spikes/emacs/'
+alias g-s-go='cd ~/codes/spikes/golang/'
+alias g-s-js='cd ~/codes/spikes/javascript/'
+alias g-s-rb='cd ~/codes/spikes/ruby/'
+alias g-sp='cd ~/codes/spikes/'
+alias g-p-go='cd ~/codes/spikes/golang/go-playground/'
+alias g-p-cj='cd ~/codes/spikes/clojure/clojure-playground/'
+## }}}
+
 # Useful aliases {{{
+alias v-aliases-priv='vim ~/apps/private-dotfiles/env/aliases.sh'
+alias v-aliases='vim ~/apps/dotfiles/env/aliases.sh'
+alias v-env-priv='vim ~/apps/private-dotfiles/env/env.sh'
+alias v-env='vim ~/apps/dotfiles/env/env.sh'
+alias v-scripts='cd ~/apps/pro-scripts;vim -c CommandT'
+alias v-ssh='vim ~/.ssh/config'
+alias v-z='vim ~/.zshrc'
 alias v='vim'
-alias cp='     nocorrect cp'
-alias curl='   noglob curl'
-alias find='   noglob find'
-alias gem='    nocorrect gem'
-alias links='  noglob links'
-alias ln='     nocorrect ln'
-alias locate=' noglob locate'
-alias mkdir='  nocorrect mkdir'
-alias mv='     nocorrect mv'
-alias rm='     nocorrect rm'
-alias w3m='    noglob w3m -no-mouse'
-alias wget='   noglob wget'
+alias vn='vim -c "NERDTree"'
+alias vt='vim -c "CommandT"'
+
+alias cp='nocorrect cp'
+alias curl='noglob curl'
+# Tips: if you are on mac try $brew install findutils --with-default-name
+alias find='noglob find'
+alias gem='nocorrect gem'
+alias links='noglob links'
+alias ln='nocorrect ln'
+alias locate='noglob locate'
+alias mkdir='nocorrect mkdir'
+alias mv='nocorrect mv'
+alias rm='nocorrect rm'
+alias w3m='noglob w3m -no-mouse'
+alias wget='noglob wget'
 
 # Useful bundle aliases
 alias be=' bundle exec'
 alias ber='bundle exec rake'
+alias bes='bundle exec rspec'
+alias bec='bundle exec cucumber'
+
+# When working with Vagrant
+alias ssh-vagrant='ssh deploy@33.33.33.33'
 
 # Quickly navigate to the installed ruby gems
-alias v19='cd ~/.rbenv/versions/1.9.3/lib/ruby/gems/1.9.1/gems/;vim .'
-alias g19='cd ~/.rbenv/versions/1.9.3/lib/ruby/gems/1.9.1/gems/'
 alias v22='cd ~/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/;vim .'
 alias g22='cd ~/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/'
-# }}}
+## }}}
 
-# Git related aliases {{{
+## Git related aliases {{{
 alias gd1='git diff HEAD~1'
 alias gd2='git diff HEAD~2'
 alias gd3='git diff HEAD~3'
 alias gd4='git diff HEAD~4'
 alias gd5='git diff HEAD~5'
 
-alias gn1='git diff --name-only HEAD~1'
-alias gn2='git diff --name-only HEAD~2'
-alias gn3='git diff --name-only HEAD~3'
-alias gn4='git diff --name-only HEAD~4'
-alias gn5='git diff --name-only HEAD~5'
+## Skip non-ascii files
+alias gn1='file $(git diff --name-only HEAD~1) | grep -i ASCII | cut -d: -f1'
+alias gn2='file $(git diff --name-only HEAD~2) | grep -i ASCII | cut -d: -f1'
+alias gn3='file $(git diff --name-only HEAD~3) | grep -i ASCII | cut -d: -f1'
+alias gn4='file $(git diff --name-only HEAD~4) | grep -i ASCII | cut -d: -f1'
+alias gn5='file $(git diff --name-only HEAD~5) | grep -i ASCII | cut -d: -f1'
 
-alias vd1='vim `git diff --name-only HEAD~1 | grep -v ^vendor`'
-alias vd2='vim `git diff --name-only HEAD~2 | grep -v ^vendor`'
-alias vd3='vim `git diff --name-only HEAD~3 | grep -v ^vendor`'
-alias vd4='vim `git diff --name-only HEAD~4 | grep -v ^vendor`'
-alias vd5='vim `git diff --name-only HEAD~5 | grep -v ^vendor`'
+## Skip non-ascii files
+alias vd1='vim `file $(git diff --name-only HEAD~1) | grep -i ASCII | cut -d: -f1`'
+alias vd2='vim `file $(git diff --name-only HEAD~2) | grep -i ASCII | cut -d: -f1`'
+alias vd3='vim `file $(git diff --name-only HEAD~3) | grep -i ASCII | cut -d: -f1`'
+alias vd4='vim `file $(git diff --name-only HEAD~4) | grep -i ASCII | cut -d: -f1`'
+alias vd5='vim `file $(git diff --name-only HEAD~5) | grep -i ASCII | cut -d: -f1`'
 
 alias gr1='git rebase -i HEAD~1'
 alias gr2='git rebase -i HEAD~2'
 alias gr3='git rebase -i HEAD~3'
 alias gr4='git rebase -i HEAD~4'
 alias gr5='git rebase -i HEAD~5'
-alias gr6='git rebase -i HEAD~6'
-alias gr7='git rebase -i HEAD~7'
-alias gr8='git rebase -i HEAD~8'
-alias gr9='git rebase -i HEAD~9'
 
 alias gaa='git add --all ./'
 alias gca='git commit -am 'WIP''
+alias gcam='git commit --amend'
 alias gcp='git commit -am 'WIP' && git push'
-alias gcm='git commit -m  'WIP''
+alias gcm='git commit -m 'WIP''
 # }}}
 
 ## Misc aliases {{{
 alias sz='source ~/.zshrc'
 alias git-where-was-i='git log --no-merges --author=$USER'
-alias omz='vim ~/.oh-my-zsh/'
 alias t-kill='tmux kill-session -t'
-# See: http://usevim.com/2012/03/21/git-and-vimdiff/
+
+## See: http://usevim.com/2012/03/21/git-and-vimdiff/
 alias v-changed='vim -p `git diff --name-only | grep -v Gemfile`'
 alias run-playbook='ansible-playbook --vault-password-file ~/.vault_pass.txt -vvvv'
 ## }}}
@@ -73,16 +107,29 @@ alias run-playbook='ansible-playbook --vault-password-file ~/.vault_pass.txt -vv
 platform=`uname`
 if [[ $platform == 'Linux' ]]; then
   alias a='ls -lrth --color'
-  # Note: may be also $nautilus `pwd`
+  ## Note: may be also $nautilus `pwd`
   alias n='nautilus . &> /dev/null'
   alias chrome='/usr/bin/google-chrome'
-  # If we are on Ubuntu/Linux may be we should use this
-  alias vim='/usr/local/bin/vim'
-  alias v='/usr/local/bin/vim'
+  ## If we are on Ubuntu/Linux may be we should use this
+  #alias vim='/usr/local/bin/vim'
+  #alias v='/usr/local/bin/vim'
 elif [[ $platform == 'Darwin' ]]; then
   alias a='ls -lrthG'
-  # Use the right path of Vim please
-  alias vim='/opt/boxen/homebrew/bin/vim'
-  alias v='/opt/boxen/homebrew/bin/vim'
+  ## Be explicit about the version of Vim works better with git
+  #alias vim='/opt/boxen/homebrew/bin/vim'
+  #alias v='/opt/boxen/homebrew/bin/vim'
 fi
 # }}}
+
+## Emacs stuffs {{{
+## Note: for this to work emacs should be started first with
+#$emacs --deamon
+alias e='emacsclient -t'
+### }}}
+
+## Install latest version of Emacs and fix the alias to make it use
+## the latest version [see also](https://jonasbjork.net/install-emacs-25-0-macosx/)
+
+#brew install emacs --HEAD --use-git-head --cocao --srgb
+#brew linkapps emacs
+#alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
