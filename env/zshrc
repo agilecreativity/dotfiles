@@ -153,12 +153,6 @@ if [[ $platform == 'Darwin' ]]; then
   export PATH=$ANDROID_HOME/bin:$PATH
   export PATH=$ANDROID_HOME/platform-tools:$PATH
   export PATH=$ANDROID_HOME/tools:$PATH
-
-  ## Setup proxy for VHA
-  # export http_proxy=http://internal-proxy.dc.vodafone.com.au:8080
-  # export HTTP_PROXY=http://internal-proxy.dc.vodafone.com.au:8080
-  # export HTTPS_PROXY=http://internal-proxy.dc.vodafone.com.au:8080
-  # export https_proxy=http://internal-proxy.dc.vodafone.com.au:8080
 fi
 
 ##source $HOME/apps/pro-scripts/private/vha/vha-update-proxy
