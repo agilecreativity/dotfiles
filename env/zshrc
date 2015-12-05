@@ -5,8 +5,8 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
-#ZSH_THEME="avit"
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="avit"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -146,9 +146,6 @@ fi
 # For using with Android Studio
 if [[ $platform == 'Darwin' ]]; then
   ## For testing with Emacs
-  #unset GEM_HOME
-  #unset GEM_PATH
-  #export PATH=/usr/local/bin:/opt/boxen/rbenv/shims:$PATH
   export ANDROID_HOME=$HOME/Library/Android/sdk
   export PATH=$ANDROID_HOME/bin:$PATH
   export PATH=$ANDROID_HOME/platform-tools:$PATH
@@ -156,7 +153,3 @@ if [[ $platform == 'Darwin' ]]; then
 fi
 
 ##source $HOME/apps/pro-scripts/private/vha/vha-update-proxy
-
-## For NPM
-#npm config set proxy       internal-proxy.dc.vodafone.com.au:8080
-#npm config set https-proxy internal-proxy.dc.vodafone.com.au:8080

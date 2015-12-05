@@ -1,11 +1,9 @@
 ## Quick navigation {{{
-alias g-dem='cd ~/.emacs.d/'
 alias g-desktop='cd ~/Desktop/'
 alias g-dotfiles-pri='cd ~/apps/private-dotfiles/'
 alias g-dotfiles='cd ~/apps/dotfiles/'
 alias g-download='cd ~/Downloads/'
 alias g-dropbox='cd ~/Dropbox/'
-alias g-dv='cd ~/dotvim/'
 alias g-scripts='cd ~/apps/pro-scripts/'
 alias g-tmux-starter='cd ~/apps/tmux-starter/'
 
@@ -15,25 +13,24 @@ alias g-s-go='cd ~/codes/spikes/golang/'
 alias g-s-js='cd ~/codes/spikes/javascript/'
 alias g-s-rb='cd ~/codes/spikes/ruby/'
 alias g-sp='cd ~/codes/spikes/'
-alias g-p-go='cd ~/codes/spikes/golang/go-playground/'
-alias g-p-cj='cd ~/codes/spikes/clojure/clojure-playground/'
 ## }}}
 
 # Useful aliases {{{
-alias v-aliases-priv='vim ~/apps/private-dotfiles/env/aliases.sh'
-alias v-aliases='vim ~/apps/dotfiles/env/aliases.sh'
-alias v-env-priv='vim ~/apps/private-dotfiles/env/env.sh'
+alias v-als='vim ~/apps/dotfiles/env/aliases.sh'
+alias v-als-priv='vim ~/apps/private-dotfiles/env/aliases.sh'
+
 alias v-env='vim ~/apps/dotfiles/env/env.sh'
-alias v-scripts='cd ~/apps/pro-scripts;vim -c CommandT'
-alias v-ssh='vim ~/.ssh/config'
-alias v-z='vim ~/.zshrc'
+alias v-env-pr='vim ~/apps/private-dotfiles/env/env.sh'
+
+alias v-scr='cd ~/apps/pro-scripts;vim -c CommandT'
+alias vs='vim ~/.ssh/config'
+alias vz='vim ~/.zshrc'
 alias v='vim'
 alias vn='vim -c "NERDTree"'
 alias vt='vim -c "CommandT"'
 
 alias cp='nocorrect cp'
 alias curl='noglob curl'
-# Tips: if you are on mac try $brew install findutils --with-default-name
 alias find='noglob find'
 alias gem='nocorrect gem'
 alias links='noglob links'
