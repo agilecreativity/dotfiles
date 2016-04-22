@@ -6,17 +6,21 @@ export ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 
-# The default theme
-#ZSH_THEME="robbyrussell"
+# Most of the fancy themes require good fonts to look nice.
+# For best result try `brew install powerline` if you are on OSX
+# or `git clone git@github.com:powerline/fonts.git; cd fonts; ./install.sh`
+# also https://gist.github.com/kevin-smets/8568070
 
-## For best result try `brew install powerline` if you are on OSX
-## or `git clone git@github.com:powerline/fonts.git; cd fonts; ./install.sh`
-## See: https://gist.github.com/kevin-smets/8568070
-## Look great on Arch linux
-ZSH_THEME="agnoster"
-
-## Look great on OSX
-#ZSH_THEME="bira"
+# Let's be very specific about what we need to make our life easier
+platform=`uname`
+if [[ $platform == 'Linux' ]]; then
+  ZSH_THEME="agnoster"
+elif [[ $platform == 'Darwin' ]]; then
+  ZSH_THEME="bira"
+else
+  # Use the default theme, otherwise
+  ZSH_THEME="robbyrussell"
+fi
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
