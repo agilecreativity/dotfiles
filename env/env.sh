@@ -1,17 +1,19 @@
 #!/bin/bash
-## Let's try Emacs
+
+## If Emacs is your things {{{
 export EDITOR="emacs -nw"
 export VISUAL="emacs -nw"
+## }}}
 
-## Experiment settings {{{
+## If Vim/Vi is your main editor {{{
 ## Bind the key to Vi for Zsh instead of Emacs!
 ## See: http://www.cs.elte.hu/zsh-manual/zsh_16.html
 ## http://dougblack.io/words/zsh-vi-mode.html
 ## http://zsh.sourceforge.net/Intro/intro_10.html
-##uncomment below lines if you like to use Vim
 
-#export EDITOR=vi
-#export VISUAL=vi
+#export EDITOR=vim
+#export VISUAL=vim
+
 #bindkey -v
 #bindkey '^P' up-history
 #bindkey '^N' down-history
@@ -24,8 +26,10 @@ export VISUAL="emacs -nw"
 #export KEYTIMEOUT=1
 ## }}}
 
-## Fix the vim's color when running under tmux
+## Misc Settings {{{
+## Fix the vim's color when running inside Tmux
 export TERM=screen-256color
 
 ## Don't clear screen after a command (better with `git status`)
 export LESS=-RX
+## }}}

@@ -1,13 +1,8 @@
 [core]
 	excludesfile = ~/.gitignore
-  ## Note: this is normal path
-  #editor = /usr/bin/vim
-  #editor = /usr/local/bin/vim
-
-  ## If you are using vim from Boxen
-  editor = /opt/boxen/homebrew/bin/vim
-
-  ## For ubuntu may be it is on /usr/local/bin/vim
+  ## Use Vim to edit commit message and disregards EDITOR or VISUAL settings
+  ## Note: maybe just use Emacs and uncomment the next line
+  editor = "git-editor-chooser"
   quotepath = false
 	autocrlf = input
 
@@ -121,7 +116,9 @@
 protocol = https
 
 [credential]
+# TODO: this should only be for OSX system
 helper = /opt/boxen/bin/boxen-git-credential
+
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f

@@ -1,0 +1,16 @@
+#!/bin/bash
+# Set the proper editor based on the platform we are in
+# Search: "Can git options be set conditionally" in StackOverflow
+# Note: we are using this in `~/apps/dotfiles/gitconfig`
+if [ GNU/Linux = "$(uname -o 2>/dev/null)" ]; then
+  ED="vim"
+  ## "subl -n -w"
+else
+  ## Assume to be OSX for now, need to adjust if we are using Cygwin or Windows
+  ## As on OSX, I am provision my Mac with Github's Boxen.
+  ED="/opt/boxen/homebrew/bin/vim"
+fi
+
+## If we are using Vim we need to specify the special variable
+## See: http://goo.gl/9mMgSe for detail of "$*"
+$ED "$*"
