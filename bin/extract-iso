@@ -1,0 +1,40 @@
+#!/bin/bash
+## Useful links:
+# - https://nitinchandra.wordpress.com/2013/10/28/extract-files-from-iso-images-from-a-command-line-script-on-mac-os-x/
+# - https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/mktemp.1.html
+# - http://unix.stackexchange.com/questions/131766/why-does-my-shell-script-choke-on-whitespace-or-other-special-characters
+# - http://www.cyberciti.biz/faq/bash-ksh-if-variable-is-not-defined-set-default-variable/
+# - http://stackoverflow.com/questions/2664740/extract-file-basename-without-path-and-extension-in-bash
+set -e
+
+EXPECTED_ARGS=1
+E_BADARGS=65
+
+if [ $# -ne $EXPECTED_ARGS ]
+then
+   echo "Usage: `basename $0` ./input.iso"
+   echo "e.g. : `basename $0` ./sample.iso"
+   exit $E_BADARGS
+fi
+
+input_file=$1
+
+# Output to the same directory as the filename without the extension
+output_dir=$(basename "$1" .iso)
+mkdir -p "$output_dir"
+
+## Now start the process using the input file
+dd=`hdiutil attach "$input_file" | cut -f3`
+
+## Copy all files to the temp directory we created earlier
+cp -a "$dd"/ "$output_dir"
+
+## Now checkout the file
+if [ $? -ne 0 ]; then
+  exit 10
+else
+  ## Detach the volume
+  hdiutil detach "$dd"
+  ## We no longer need the ISO after this step
+  rm -rf "$input_file"
+fi
