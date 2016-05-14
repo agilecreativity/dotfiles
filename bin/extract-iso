@@ -17,6 +17,13 @@ then
    exit $E_BADARGS
 fi
 
+# As hdiutil is only in OSX we will not proceed if running other under Linux
+platform=`uname`
+if [[ $platform != 'Darwin' ]]; then
+  echo "Sorry this script only work with OSX only!"
+  exit 0
+fi
+
 input_file=$1
 
 # Output to the same directory as the filename without the extension
@@ -36,5 +43,5 @@ else
   ## Detach the volume
   hdiutil detach "$dd"
   ## We no longer need the ISO after this step
-  rm -rf "$input_file"
+  #rm -rf "$input_file"
 fi
