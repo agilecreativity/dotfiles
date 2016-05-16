@@ -1,0 +1,21 @@
+#!/bin/bash
+# find a particular type of file (extension) and run command on each of them
+
+# stop on error
+set -e
+
+EXPECTED_ARGS=2
+E_BADARGS=65
+
+if [ $# -ne $EXPECTED_ARGS ]
+then
+  echo "Usage  : `basename $0` <ext> <command>"
+  echo "Example: `basename $0` jpg ls"
+  exit $E_BADARGS
+fi
+
+# e.g. ./find-xargs jpg namenorm
+#
+# To clean the filename of all "*.jpg" file
+# filename_cleaner -b . -e jpg -r
+find . -type f -iname "*.$1" -print0 | xargs -0 -I xx $2 xx
