@@ -7,7 +7,7 @@ alias g-dropbox='cd ~/Dropbox/'
 alias g-scripts='cd ~/apps/pro-scripts/'
 alias g-tmux-starter='cd ~/apps/tmux-starter/'
 
-alias g-s-cj='cd ~/codes/spikes/clojure/'
+alias g-m='cd ~/projects/github/mp3tagger'
 alias g-s-em='cd ~/codes/spikes/emacs/'
 alias g-s-go='cd ~/codes/spikes/golang/'
 alias g-s-js='cd ~/codes/spikes/javascript/'

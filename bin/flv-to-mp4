@@ -1,0 +1,19 @@
+#!/bin/bash
+# Batch convert multiple '*.flv', 'wma' or 'wmv' file to '*.mp4' using `ffmpeg`
+#
+# Require: valid installation of `ffmpeg`
+# Tips:
+# Mandatory setup for OSX:
+#
+# $brew install ffmpeg --with-faac
+# $brew cask install handbrake
+# $brew cask install handbrakecli
+# $brew cask install handbrakebatch
+#
+# TODO:
+## 1) rename the '*.FLV.mp4' to '*.mp4'
+# $rename -n -v "s/\.FLV//g" *.mp4
+#
+#  2) Implement this a Go program using Go concurrency (channel, waitgroup, etc)
+# find . type f -iname "*.FLV" -print0 | xargs -0 -I filename ffmpeg -i filename filename.mp4
+find . type f \( -iname "*.wma" -o -iname "*.wmv" -o -iname "*.flv"\) -print0 | xargs -0 -I filename ffmpeg -i filename filename.mp4
