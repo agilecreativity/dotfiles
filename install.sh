@@ -18,6 +18,10 @@ rm -rf ~/.editorconfig
 # TODO: need to adjust this if running under Linux instead of OSX
 rm -rf ~/.xrayconfig
 
+# Create some directories that we need
+mkdir -p $HOME/.xmonad
+ln -s $DOTFILES/xmonad/xmonad.hs $HOME/.xmonad/xmonad.hs
+
 echo "Create new symlinks..."
 ln -s $DOTFILES/env/zshrc      $HOME/.zshrc
 ln -s $DOTFILES/ack/ackrc      $HOME/.ackrc
