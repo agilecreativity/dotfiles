@@ -17,6 +17,7 @@ rm -rf ~/.tmux.conf
 rm -rf ~/.editorconfig
 # TODO: need to adjust this if running under Linux instead of OSX
 rm -rf ~/.xrayconfig
+rm -rf ~/.xmonad
 
 # Create some directories that we need
 mkdir -p $HOME/.xmonad
@@ -34,4 +35,4 @@ ln -s $DOTFILES/editorconfig   $HOME/.editorconfig
 ln -s $DOTFILES/xrayconfig     $HOME/.xrayconfig
 
 git config --global core.excludesfile '~/.gitignore'
-echo "Done!"
+echo "Done"!
