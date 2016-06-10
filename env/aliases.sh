@@ -32,7 +32,7 @@ alias vt='vim -c "CommandT"'
 alias cp='nocorrect cp'
 alias curl='noglob curl'
 alias find='noglob find'
-alias gem='nocorrect gem'
+#alias gem='nocorrect gem'
 alias links='noglob links'
 alias ln='nocorrect ln'
 alias locate='noglob locate'
@@ -130,3 +130,6 @@ alias e='emacsclient -t'
 #brew install emacs --HEAD --use-git-head --cocao --srgb
 #brew linkapps emacs
 #alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
+
+## Start postgresql manually (run as user postgres)
+#pg_ctl -D /var/lib/postgres/data -l logfile start

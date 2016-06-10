@@ -116,8 +116,8 @@
 protocol = https
 
 [credential]
-# TODO: this should only be for OSX system
-helper = /opt/boxen/bin/boxen-git-credential
+## NOTE: this should only be for OSX system
+#helper = /opt/boxen/bin/boxen-git-credential
 
 [filter "lfs"]
 	clean = git-lfs clean %f
