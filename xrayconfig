@@ -1,3 +1,3 @@
 # Note: this is for OSX only
 #:editor: "/opt/boxen/homebrew/bin/tmux new-window '/opt/boxen/homebrew/bin/vim $file'"
-:editor: "/usr/local/bin/sublime"
+:editor: "/usr/bin/subl"

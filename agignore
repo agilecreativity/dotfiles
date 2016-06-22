@@ -24,3 +24,10 @@ build/
 ## specific libraries
 node_modules/
 app/lib/underscore.js
+
+## ignore the minified version
+*.min.*
+vendor/gems/
+vendor/assets/javascripts/
+vendor/assets/stylesheets/
+app/assets/stylesheets/usds/
