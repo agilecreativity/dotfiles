@@ -4,7 +4,7 @@
   ## Note: maybe just use Emacs and uncomment the next line
   editor = "git-editor-chooser"
   quotepath = false
-	autocrlf = true
+	autocrlf = input
 
 [push]
   default = simple
