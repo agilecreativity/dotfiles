@@ -5,7 +5,7 @@ export EDITOR="emacs -nw"
 export VISUAL="emacs -nw"
 ## }}}
 
-## If Vim/Vi is your main editor {{{
+## If Vim is your editor of the month then {{{
 ## Bind the key to Vi for Zsh instead of Emacs!
 ## See: http://www.cs.elte.hu/zsh-manual/zsh_16.html
 ## http://dougblack.io/words/zsh-vi-mode.html

@@ -121,6 +121,11 @@ elif [[ $platform == 'Darwin' ]]; then
   export PATH=$BOXEN_HOME/rbenv/bin:$PATH
   export PATH=$BOXEN_HOME/rbenv/shims:$PATH
   export PATH=$BOXEN_HOME/ruby-build/bin:$PATH
+  ## For using Android on OSX
+  export ANDROID_HOME=$HOME/Library/Android/sdk
+  export PATH=$ANDROID_HOME/bin:$PATH
+  export PATH=$ANDROID_HOME/platform-tools:$PATH
+  export PATH=$ANDROID_HOME/tools:$PATH
 fi
 ## }}}
 
@@ -128,10 +133,10 @@ fi
 export PATH=$HOME/apps/dotfiles/bin:$PATH
 export PATH=$HOME/apps/pro-scripts/public:$PATH
 export PATH=$HOME/apps/pro-scripts/private:$PATH
-# TODO: move reusable script to public!
+
+## For using with Android Studio on OSX
 export PATH=$HOME/apps/pro-scripts/private/vha:$PATH
 export PATH=$HOME/apps/tmux-starter:$PATH
-export SPIKES_HOME=$HOME/codes/spikes
 ## }}}
 
 ### Load public configurations {{{
@@ -155,11 +160,3 @@ if [ -d ~/apps/private-dotfiles/env ]; then
   unset i
 fi
 ## }}}
-
-# For using with Android Studio on OSX
-if [[ $platform == 'Darwin' ]]; then
-  export ANDROID_HOME=$HOME/Library/Android/sdk
-  export PATH=$ANDROID_HOME/bin:$PATH
-  export PATH=$ANDROID_HOME/platform-tools:$PATH
-  export PATH=$ANDROID_HOME/tools:$PATH
-fi
