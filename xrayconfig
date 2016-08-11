@@ -1,3 +1,8 @@
 # Note: this is for OSX only
 #:editor: "/opt/boxen/homebrew/bin/tmux new-window '/opt/boxen/homebrew/bin/vim $file'"
+
+# TODO: find the way to open new buffer while showing the old buffer
+#:editor: "/usr/sbin/emacs $file"
+
+# Use Sublime editor for now
 :editor: "/usr/bin/subl"

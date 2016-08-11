@@ -12,7 +12,7 @@ alias g-s-em='cd ~/codes/spikes/emacs/'
 alias g-s-go='cd ~/codes/spikes/golang/'
 alias g-s-js='cd ~/codes/spikes/javascript/'
 alias g-s-rb='cd ~/codes/spikes/ruby/'
-alias g-sp='cd ~/codes/spikes/'
+alias g-sp='cd ~/codes/others/spikes/'
 ## }}}
 
 # Useful aliases {{{

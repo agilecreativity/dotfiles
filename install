@@ -3,36 +3,37 @@ set -e
 
 # The public dotfiles
 DOTFILES=$HOME/apps/dotfiles
+PRIVATE_DOTFILES=$HOME/apps/private-dotfiles
 
 # Remove existing symlinks first! (destructive)
 echo "Remove old symlinks..."
-rm -rf ~/.aprc
-rm -rf ~/.gitconfig
 rm -rf ~/.ackrc
-rm -rf ~/.zshrc
-rm -rf ~/.gitconfig
 rm -rf ~/.agignore
+rm -rf ~/.aprc
+rm -rf ~/.editorconfig
+rm -rf ~/.gitconfig
+rm -rf ~/.gitconfig
 rm -rf ~/.gitignore
 rm -rf ~/.tmux.conf
-rm -rf ~/.editorconfig
-# TODO: need to adjust this if running under Linux instead of OSX
+## NOTE: need to adjust this if running under Linux instead of OSX
 rm -rf ~/.xrayconfig
-rm -rf ~/.xmonad
+rm -rf ~/.zshrc
 
-# Create some directories that we need
-mkdir -p $HOME/.xmonad
-ln -s $DOTFILES/xmonad/xmonad.hs $HOME/.xmonad/xmonad.hs
+## Create some directories that we need
+#rm -rf ~/.xmonad
+#mkdir -p $HOME/.xmonad
+#ln -s $DOTFILES/xmonad/xmonad.hs $HOME/.xmonad/xmonad.hs
 
 echo "Create new symlinks..."
-ln -s $DOTFILES/env/zshrc      $HOME/.zshrc
-ln -s $DOTFILES/ack/ackrc      $HOME/.ackrc
-ln -s $DOTFILES/aprc           $HOME/.aprc
-ln -s $DOTFILES/agignore       $HOME/.agignore
-ln -s $DOTFILES/gitconfig      $HOME/.gitconfig
-ln -s $DOTFILES/gitignore      $HOME/.gitignore
+ln -s $DOTFILES/ack/ackrc $HOME/.ackrc
+ln -s $DOTFILES/agignore $HOME/.agignore
+ln -s $DOTFILES/aprc $HOME/.aprc
+ln -s $DOTFILES/editorconfig $HOME/.editorconfig
+ln -s $DOTFILES/env/zshrc $HOME/.zshrc
+ln -s $DOTFILES/gitignore $HOME/.gitignore
 ln -s $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
-ln -s $DOTFILES/editorconfig   $HOME/.editorconfig
-ln -s $DOTFILES/xrayconfig     $HOME/.xrayconfig
+ln -s $DOTFILES/xrayconfig $HOME/.xrayconfig
+ln -s $PRIVATE_DOTFILES/gitconfig $HOME/.gitconfig
 
 git config --global core.excludesfile '~/.gitignore'
 echo "Done"!
