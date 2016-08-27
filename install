@@ -18,6 +18,7 @@ rm -rf ~/.tmux.conf
 ## NOTE: need to adjust this if running under Linux instead of OSX
 rm -rf ~/.xrayconfig
 rm -rf ~/.zshrc
+rm -rf ~/.pryrc
 
 ## Create some directories that we need
 #rm -rf ~/.xmonad
@@ -33,6 +34,7 @@ ln -s $DOTFILES/env/zshrc $HOME/.zshrc
 ln -s $DOTFILES/gitignore $HOME/.gitignore
 ln -s $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
 ln -s $DOTFILES/xrayconfig $HOME/.xrayconfig
+ln -s $DOTFILES/pryrc $HOME/.pryrc
 ln -s $PRIVATE_DOTFILES/gitconfig $HOME/.gitconfig
 
 git config --global core.excludesfile '~/.gitignore'
