@@ -1,6 +1,6 @@
 ## Quick navigation {{{
 alias g-desktop='cd ~/Desktop/'
-alias g-dotfiles-pri='cd ~/apps/private-dotfiles/'
+alias g-private-dotfile='cd ~/apps/private-dotfiles/'
 alias g-dotfiles='cd ~/apps/dotfiles/'
 alias g-download='cd ~/Downloads/'
 alias g-dropbox='cd ~/Dropbox/'
