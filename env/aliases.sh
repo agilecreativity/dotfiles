@@ -1,30 +1,19 @@
 ## Quick navigation {{{
 alias g-desktop='cd ~/Desktop/'
-alias g-private-dotfile='cd ~/apps/private-dotfiles/'
+alias g-private-dotfiles='cd ~/apps/private-dotfiles/'
 alias g-dotfiles='cd ~/apps/dotfiles/'
 alias g-download='cd ~/Downloads/'
 alias g-dropbox='cd ~/Dropbox/'
 alias g-scripts='cd ~/apps/pro-scripts/'
 alias g-tmux-starter='cd ~/apps/tmux-starter/'
-
-alias g-m='cd ~/projects/github/clojure-walkthrough/'
-alias g-s-em='cd ~/codes/spikes/emacs/'
-alias g-s-go='cd ~/codes/spikes/golang/'
-alias g-s-js='cd ~/codes/spikes/javascript/'
-alias g-s-rb='cd ~/codes/spikes/ruby/'
 alias g-sp='cd ~/codes/others/spikes/'
 ## }}}
 
 # Useful aliases {{{
 alias v-als='vim ~/apps/dotfiles/env/aliases.sh'
 alias v-als-priv='vim ~/apps/private-dotfiles/env/aliases.sh'
-
 alias v-env='vim ~/apps/dotfiles/env/env.sh'
 alias v-env-pr='vim ~/apps/private-dotfiles/env/env.sh'
-
-alias v-scr='cd ~/apps/pro-scripts;vim -c CommandT'
-alias vs='vim ~/.ssh/config'
-alias vz='vim ~/.zshrc'
 alias v='vim'
 alias vn='vim -c "NERDTree"'
 alias vt='vim -c "CommandT"'
@@ -32,7 +21,7 @@ alias vt='vim -c "CommandT"'
 alias cp='nocorrect cp'
 alias curl='noglob curl'
 alias find='noglob find'
-#alias gem='nocorrect gem'
+
 alias links='noglob links'
 alias ln='nocorrect ln'
 alias locate='noglob locate'
@@ -50,10 +39,6 @@ alias bec='bundle exec cucumber'
 
 # When working with Vagrant
 alias ssh-vagrant='ssh deploy@33.33.33.33'
-
-# Quickly navigate to the installed ruby gems
-alias v22='cd ~/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/;vim .'
-alias g22='cd ~/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/'
 ## }}}
 
 ## Git related aliases {{{
@@ -104,17 +89,10 @@ alias run-playbook='ansible-playbook --vault-password-file ~/.vault_pass.txt -vv
 platform=`uname`
 if [[ $platform == 'Linux' ]]; then
   alias a='ls -lrth --color'
-  ## Note: may be also $nautilus `pwd`
-  alias n='nautilus . &> /dev/null'
+  alias n='nautilus `pwd` &'
   alias chrome='/usr/bin/google-chrome'
-  ## If we are on Ubuntu/Linux may be we should use this
-  #alias vim='/usr/local/bin/vim'
-  #alias v='/usr/local/bin/vim'
 elif [[ $platform == 'Darwin' ]]; then
   alias a='ls -lrthG'
-  ## Be explicit about the version of Vim works better with git
-  #alias vim='/opt/boxen/homebrew/bin/vim'
-  #alias v='/opt/boxen/homebrew/bin/vim'
 fi
 # }}}
 
@@ -123,13 +101,6 @@ fi
 #$emacs --deamon
 alias e='emacsclient -t'
 ### }}}
-
-## Install latest version of Emacs and fix the alias to make it use
-## the latest version [see also](https://jonasbjork.net/install-emacs-25-0-macosx/)
-
-#brew install emacs --HEAD --use-git-head --cocao --srgb
-#brew linkapps emacs
-#alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 
 ## Start postgresql manually (run as user postgres)
 #pg_ctl -D /var/lib/postgres/data -l logfile start
