@@ -57,3 +57,9 @@ start-resque.sh
 
 ## Ag related file
 .agignore
+
+## Gnu's gtags files
+## https://www.gnu.org/software/global/manual/global.html
+GRTAGS
+GPATH
+GTAGS
