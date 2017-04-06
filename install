@@ -19,6 +19,9 @@ rm -rf ~/.tmux.conf
 rm -rf ~/.xrayconfig
 rm -rf ~/.zshrc
 rm -rf ~/.pryrc
+## Add ~/.boot profiles
+rm -rf ~/.boot/boot.properties
+rm -rf ~/.boot/profile.boot
 
 ## Create some directories that we need
 #rm -rf ~/.xmonad
@@ -36,6 +39,9 @@ ln -s $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
 ln -s $DOTFILES/xrayconfig $HOME/.xrayconfig
 ln -s $DOTFILES/pryrc $HOME/.pryrc
 ln -s $PRIVATE_DOTFILES/gitconfig $HOME/.gitconfig
+
+ln -s $DOTFILES/boot.properties $HOME/.boot/boot.properties
+ln -s $DOTFILES/profile.boot $HOME/.boot/profile.boot
 
 git config --global core.excludesfile '~/.gitignore'
 echo "Done"!
