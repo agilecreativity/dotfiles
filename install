@@ -19,9 +19,11 @@ rm -rf ~/.tmux.conf
 rm -rf ~/.xrayconfig
 rm -rf ~/.zshrc
 rm -rf ~/.pryrc
-## Add ~/.boot profiles
+
+## Clojure Development
 rm -rf ~/.boot/boot.properties
 rm -rf ~/.boot/profile.boot
+rm -rf ~/.lein/profile.clj
 
 ## Create some directories that we need
 #rm -rf ~/.xmonad
@@ -40,8 +42,13 @@ ln -s $DOTFILES/xrayconfig $HOME/.xrayconfig
 ln -s $DOTFILES/pryrc $HOME/.pryrc
 ln -s $PRIVATE_DOTFILES/gitconfig $HOME/.gitconfig
 
-ln -s $DOTFILES/boot.properties $HOME/.boot/boot.properties
-ln -s $DOTFILES/profile.boot $HOME/.boot/profile.boot
+## For Clojure Development
+mkdir -p ~/.boot
+ln -s $DOTFILES/clojure/boot.properties $HOME/.boot/boot.properties
+ln -s $DOTFILES/clojure/profile.boot $HOME/.boot/profile.boot
+
+mkdir -p ~/.lein
+ln -s $DOTFILES/clojure/profile.clj $HOME/.lein/profile.clj
 
 git config --global core.excludesfile '~/.gitignore'
-echo "Done"!
+echo "Happy Hacking!"!
