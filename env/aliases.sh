@@ -90,7 +90,7 @@ platform=`uname`
 if [[ $platform == 'Linux' ]]; then
   alias a='ls -lrth --color'
   alias n='nautilus `pwd` &'
-  alias chrome='/usr/bin/google-chrome'
+  ##alias chrome='/usr/bin/google-chrome'
 elif [[ $platform == 'Darwin' ]]; then
   alias a='ls -lrthG'
 fi
