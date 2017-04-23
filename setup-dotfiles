@@ -1,0 +1,26 @@
+mkdir -p $HOME/apps
+## Let's start clean shall we?
+rm -rf ~/apps/oh-my-zsh
+
+## Note: need to type the exit at the end of the process
+export ZSH="$HOME/apps/oh-my-zsh"; sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+## Clone private dotfiels (need to type username/password here)
+git clone https://github.com/agilecreativity/private-dotfiles.git $HOME/apps/private-dotfiles
+
+## Install the main dotfiles
+git clone https://github.com/agilecreativity/dotfiles.git $HOME/apps/dotfiles
+
+## Setup and make sure that the ~/.ssh is up with the right credentials
+mkdir -p ~/.ssh
+chmod 0700 ~/.ssh
+cp ~/apps/private-dotfiles/github/dot-ssh/* ~/.ssh/
+cd ~/.ssh && ./set-permission
+
+## Then clone the rest of the dotfiles
+git clone git@github.com:agilecreativity/dotvim.git ~/apps/dotvim
+git clone git@github.com:agilecreativity/dotemacs-prelude.git ~/apps/dotemacs-prelude
+
+## Nice fonts for use with Emacs
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/agilecreativity/sudo-make-install/master/scripts/install-source-code-pro-fonts
+)"
