@@ -1,3 +1,4 @@
+#!/bin/sh
 mkdir -p $HOME/apps
 ## Let's start clean shall we?
 rm -rf ~/apps/oh-my-zsh
@@ -21,6 +22,5 @@ cd ~/.ssh && ./set-permission
 git clone git@github.com:agilecreativity/dotvim.git ~/apps/dotvim
 git clone git@github.com:agilecreativity/dotemacs-prelude.git ~/apps/dotemacs-prelude
 
-## Nice fonts for use with Emacs
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/agilecreativity/sudo-make-install/master/scripts/install-source-code-pro-fonts
-)"
+## Setup fonts for use with Emacs
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/agilecreativity/sudo-make-install/master/scripts/install-source-code-pro-fonts)"
