@@ -17,51 +17,73 @@ cd ~/apps/dotfiles
 
 See the file `install` for more detail.
 
-```sh 
+```sh
 #/usr/bin/env bash
 set -e
 
 # The public dotfiles
 DOTFILES=$HOME/apps/dotfiles
+PRIVATE_DOTFILES=$HOME/apps/private-dotfiles
 
 # Remove existing symlinks first! (destructive)
 echo "Remove old symlinks..."
-rm -rf ~/.aprc
-rm -rf ~/.gitconfig
 rm -rf ~/.ackrc
-rm -rf ~/.zshrc
-rm -rf ~/.gitconfig
 rm -rf ~/.agignore
+rm -rf ~/.aprc
+rm -rf ~/.editorconfig
+rm -rf ~/.gitconfig
+rm -rf ~/.gitconfig
 rm -rf ~/.gitignore
 rm -rf ~/.tmux.conf
-rm -rf ~/.editorconfig
-# TODO: need to adjust this if running under Linux instead of OSX
-rm -rf ~/.xrayconfig
-rm -rf ~/.xmonad
 
-# Create some directories that we need
-mkdir -p $HOME/.xmonad
-ln -s $DOTFILES/xmonad/xmonad.hs $HOME/.xmonad/xmonad.hs
+## NOTE: need to adjust this if running under Linux instead of OSX
+rm -rf ~/.xrayconfig
+rm -rf ~/.zshrc
+rm -rf ~/.pryrc
+
+## Clojure Development
+rm -rf ~/.boot/boot.properties
+rm -rf ~/.boot/profile.boot
+rm -rf ~/.lein/profile.clj
 
 echo "Create new symlinks..."
-ln -s $DOTFILES/env/zshrc      $HOME/.zshrc
-ln -s $DOTFILES/ack/ackrc      $HOME/.ackrc
-ln -s $DOTFILES/aprc           $HOME/.aprc
-ln -s $DOTFILES/agignore       $HOME/.agignore
-ln -s $DOTFILES/gitconfig      $HOME/.gitconfig
-ln -s $DOTFILES/gitignore      $HOME/.gitignore
+ln -s $DOTFILES/ack/ackrc $HOME/.ackrc
+ln -s $DOTFILES/agignore $HOME/.agignore
+ln -s $DOTFILES/aprc $HOME/.aprc
+ln -s $DOTFILES/editorconfig $HOME/.editorconfig
+ln -s $DOTFILES/env/zshrc $HOME/.zshrc
+ln -s $DOTFILES/gitignore $HOME/.gitignore
 ln -s $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
-ln -s $DOTFILES/editorconfig   $HOME/.editorconfig
-ln -s $DOTFILES/xrayconfig     $HOME/.xrayconfig
+ln -s $DOTFILES/xrayconfig $HOME/.xrayconfig
+ln -s $DOTFILES/pryrc $HOME/.pryrc
+ln -s $PRIVATE_DOTFILES/gitconfig $HOME/.gitconfig
+
+## For Clojure Development
+mkdir -p ~/.boot
+ln -s $DOTFILES/clojure/boot.properties $HOME/.boot/boot.properties
+ln -s $DOTFILES/clojure/profile.boot $HOME/.boot/profile.boot
+
+mkdir -p ~/.lein
+ln -s $DOTFILES/clojure/profile.clj $HOME/.lein/profile.clj
 
 git config --global core.excludesfile '~/.gitignore'
-echo "Done"!
+echo "Happy Hacking!"!
 ```
 
 If you are using ruby you may also run `install-rbenv` (optional)
+
+### Experimental only
+
+This is my personal way to quickly get my personal settings to work in the new machine.
+
+Note: this rely on my `private-dotfiles` that contains some personal settings so you will need to remove any
+references in the script above first to make it work for you.
+
+```sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/agilecreativity/dotfiles/master/setup)"
+```
 
 ### Note
 
 - [seoul256-gnome-terminal](https://github.com/anuragsoni/seoul256-gnome-terminal)
 - [Solarized Color for Gnome](git@github.com:Anthony25/gnome-terminal-colors-solarized.git)
-)

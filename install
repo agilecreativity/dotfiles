@@ -25,11 +25,6 @@ rm -rf ~/.boot/boot.properties
 rm -rf ~/.boot/profile.boot
 rm -rf ~/.lein/profile.clj
 
-## Create some directories that we need
-#rm -rf ~/.xmonad
-#mkdir -p $HOME/.xmonad
-#ln -s $DOTFILES/xmonad/xmonad.hs $HOME/.xmonad/xmonad.hs
-
 echo "Create new symlinks..."
 ln -s $DOTFILES/ack/ackrc $HOME/.ackrc
 ln -s $DOTFILES/agignore $HOME/.agignore
