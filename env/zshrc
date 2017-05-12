@@ -16,7 +16,10 @@ platform=`uname`
 if [[ $platform == 'Linux' ]]; then
   ZSH_THEME="agnoster"
 elif [[ $platform == 'Darwin' ]]; then
-  ZSH_THEME="bira"
+  ## Good theme that I use quite often
+  #ZSH_THEME="bira"
+  ## Nice altertive themes
+  ZSH_THEME="ys"
 else
   # Use the default theme, otherwise
   ZSH_THEME="robbyrussell"
