@@ -164,5 +164,8 @@ if [ -d ~/apps/private-dotfiles/env ]; then
 fi
 ## }}}
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+## Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH=$PATH:$HOME/.rvm/bin
+
+## Make sure that /usr/local/bin comes last in the PATH
+export PATH=$PATH:/usr/local/bin

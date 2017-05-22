@@ -23,7 +23,7 @@ rm -rf ~/.pryrc
 ## Clojure Development
 rm -rf ~/.boot/boot.properties
 rm -rf ~/.boot/profile.boot
-rm -rf ~/.lein/profile.clj
+rm -rf ~/.lein/profiles.clj
 
 echo "Create new symlinks..."
 ln -s $DOTFILES/ack/ackrc $HOME/.ackrc
@@ -43,7 +43,7 @@ ln -s $DOTFILES/clojure/boot.properties $HOME/.boot/boot.properties
 ln -s $DOTFILES/clojure/profile.boot $HOME/.boot/profile.boot
 
 mkdir -p ~/.lein
-ln -s $DOTFILES/clojure/profile.clj $HOME/.lein/profile.clj
+ln -s $DOTFILES/clojure/profiles.clj $HOME/.lein/profiles.clj
 
 git config --global core.excludesfile '~/.gitignore'
 echo "Happy Hacking!"!
