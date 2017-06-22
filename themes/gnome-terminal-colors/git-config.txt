@@ -1,0 +1,2 @@
+## Note: the original config is from
+https://github.com/gnumoksha/gnome-terminal-colors.git
