@@ -25,6 +25,9 @@ rm -rf ~/.boot/boot.properties
 rm -rf ~/.boot/profile.boot
 rm -rf ~/.lein/profiles.clj
 
+## AWS Configuration
+rm -rf $HOME/.aws
+
 echo "Create new symlinks..."
 ln -s $DOTFILES/ack/ackrc $HOME/.ackrc
 ln -s $DOTFILES/agignore $HOME/.agignore
@@ -36,6 +39,15 @@ ln -s $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
 ln -s $DOTFILES/xrayconfig $HOME/.xrayconfig
 ln -s $DOTFILES/pryrc $HOME/.pryrc
 ln -s $PRIVATE_DOTFILES/gitconfig $HOME/.gitconfig
+
+## Setup the AWS config directory and re-populate from known location
+mkdir -p $HOME/.aws
+ln -s $PRIVATE_DOTFILES/github/dot-aws/config $HOME/.aws/config
+ln -s $PRIVATE_DOTFILES/github/dot-aws/credentials $HOME/.aws/credentials
+
+chmod 755 $HOME/.aws
+chmod 600 $HOME/.aws/config
+chmod 600 $HOME/.aws/credentials
 
 ## For Clojure Development
 mkdir -p ~/.boot
