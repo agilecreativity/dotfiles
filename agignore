@@ -28,6 +28,7 @@ app/lib/underscore.js
 ## ignore the minified version
 *.min.*
 vendor/gems/
+vendor/bundle/
 vendor/assets/javascripts/
 vendor/assets/stylesheets/
 app/assets/stylesheets/usds/
