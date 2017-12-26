@@ -63,3 +63,6 @@ start-resque.sh
 GRTAGS
 GPATH
 GTAGS
+
+## Clojure/ClojureScript
+.lumo_cache/*
