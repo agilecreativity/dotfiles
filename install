@@ -15,6 +15,8 @@ rm -rf ~/.gitconfig
 rm -rf ~/.gitconfig
 rm -rf ~/.gitignore
 rm -rf ~/.tmux.conf
+rm -rf ~/.npmrc
+
 ## NOTE: need to adjust this if running under Linux instead of OSX
 rm -rf ~/.xrayconfig
 rm -rf ~/.zshrc
@@ -39,6 +41,7 @@ ln -s $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
 ln -s $DOTFILES/xrayconfig $HOME/.xrayconfig
 ln -s $DOTFILES/pryrc $HOME/.pryrc
 ln -s $PRIVATE_DOTFILES/gitconfig $HOME/.gitconfig
+ln -s $PRIVATE_DOTFILES/npmrc $HOME/.npmrc
 
 ## Setup the AWS config directory and re-populate from known location
 mkdir -p $HOME/.aws
