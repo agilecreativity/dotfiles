@@ -46,7 +46,10 @@ ln -s $DOTFILES/pryrc $HOME/.pryrc
 ln -s $PRIVATE_DOTFILES/gitconfig $HOME/.gitconfig
 
 ## Extra config
-ln -s $PRIVATE_DOTFILES/npmrc $HOME/.npmrc
+## TODO: have logic to switch based on the location or env variable
+## e.g. when you are at home vs at work?
+#ln -s $PRIVATE_DOTFILES/dot-config/npmrc-client $HOME/.npmrc
+ln -s $PRIVATE_DOTFILES/dot-config/npmrc-personal $HOME/.npmrc
 ln -s $PRIVATE_DOTFILES/dot-config/settings.xml ~/.m2/settings.xml
 
 ## Setup the AWS config directory and re-populate from known location
