@@ -66,3 +66,6 @@ GTAGS
 
 ## Clojure/ClojureScript
 .lumo_cache/*
+
+## Others
+start-sequoia-service

@@ -32,3 +32,6 @@ vendor/bundle/
 vendor/assets/javascripts/
 vendor/assets/stylesheets/
 app/assets/stylesheets/usds/
+
+## misc
+start-sequoia-service
