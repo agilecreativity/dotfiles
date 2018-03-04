@@ -17,8 +17,8 @@ rm -rf ~/.gitignore
 rm -rf ~/.tmux.conf
 
 ## Extra settings
-rm -rf ~/.npmrc
-rm -rf ~/.m2/settings.xml
+#rm -rf ~/.npmrc
+#rm -rf ~/.m2/settings.xml
 
 ## NOTE: need to adjust this if running under Linux instead of OSX
 rm -rf ~/.xrayconfig
@@ -48,9 +48,8 @@ ln -s $PRIVATE_DOTFILES/gitconfig $HOME/.gitconfig
 ## Extra config
 ## TODO: have logic to switch based on the location or env variable
 ## e.g. when you are at home vs at work?
-#ln -s $PRIVATE_DOTFILES/dot-config/npmrc-client $HOME/.npmrc
-ln -s $PRIVATE_DOTFILES/dot-config/npmrc-personal $HOME/.npmrc
-ln -s $PRIVATE_DOTFILES/dot-config/settings.xml ~/.m2/settings.xml
+#ln -s $PRIVATE_DOTFILES/dot-config/npmrc-personal $HOME/.npmrc
+#ln -s $PRIVATE_DOTFILES/dot-config/settings-personal.xml ~/.m2/settings.xml
 
 ## Setup the AWS config directory and re-populate from known location
 mkdir -p $HOME/.aws
