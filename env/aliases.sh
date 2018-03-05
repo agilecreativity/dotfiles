@@ -1,7 +1,7 @@
 ## Quick navigation {{{
 alias g-desktop='cd ~/Desktop/'
-alias g-pr-dotfiles='cd ~/apps/private-dotfiles/'
-alias g-dotfiles='cd ~/apps/dotfiles/'
+alias g-dot='cd ~/apps/private-dotfiles/'
+alias g-dot-pub='cd ~/apps/dotfiles/'
 alias g-download='cd ~/Downloads/'
 alias g-dropbox='cd ~/Dropbox/'
 alias g-scripts='cd ~/apps/pro-scripts/'
