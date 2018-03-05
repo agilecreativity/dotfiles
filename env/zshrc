@@ -132,17 +132,7 @@ elif [[ $platform == 'Darwin' ]]; then
 fi
 ## }}}
 
-## Custom Setting {{{
-export PATH=$HOME/apps/dotfiles/bin:$PATH
-export PATH=$HOME/apps/pro-scripts/public:$PATH
-export PATH=$HOME/apps/pro-scripts/private:$PATH
-
-## For using with Android Studio on OSX
-export PATH=$HOME/apps/pro-scripts/private/vha:$PATH
-export PATH=$HOME/apps/tmux-starter:$PATH
-## }}}
-
-### Load public configurations {{{
+## Load public configurations {{
 if [ -d ~/apps/dotfiles/env/ ]; then
   for i in ~/apps/dotfiles/env/*.sh; do
     if [ -r $i ]; then
@@ -151,9 +141,9 @@ if [ -d ~/apps/dotfiles/env/ ]; then
   done
   unset i
 fi
-## }}}
+## }}
 
-## Load the private configurations {{{
+## Load private configurations {{
 if [ -d ~/apps/private-dotfiles/env ]; then
   for i in ~/apps/private-dotfiles/env/*.sh; do
     if [ -r $i ]; then
@@ -162,7 +152,7 @@ if [ -d ~/apps/private-dotfiles/env ]; then
   done
   unset i
 fi
-## }}}
+## }}
 
 ## Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH=$PATH:$HOME/.rvm/bin
