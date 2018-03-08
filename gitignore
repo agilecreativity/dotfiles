@@ -78,3 +78,4 @@ screenshots/
 .nrepl-port
 ## Ignore some config
 local-config.edn
+*-OLD
