@@ -85,7 +85,7 @@ alias gr8='git rebase -i HEAD~8'
 alias gaa='git add --all ./'
 alias gca='git commit -am 'WIP''
 alias gcam='git commit --amend'
-alias gcp='git commit -am 'WIP' && git push'
+##alias gcp='git commit -am 'WIP' && git push'
 alias gcm='git commit -m 'WIP''
 # }}}
 
