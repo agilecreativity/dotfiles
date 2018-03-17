@@ -155,9 +155,11 @@ fi
 ## }}
 
 ## Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH=$PATH:$HOME/.rvm/bin
+if [ -d ~/.rbenv ]; then
+  export PATH=$HOME/.rvm/bin:$HOME/.rbenv/shims:$PATH
+fi
 
 ## Make sure that /usr/local/bin comes last in the PATH
-export PATH=$PATH:/usr/local/bin
+export PATH=/usr/local/bin:$PATH
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
