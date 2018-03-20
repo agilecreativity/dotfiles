@@ -23,6 +23,7 @@ rm -rf ~/.tmux.conf
 ## NOTE: need to adjust this if running under Linux instead of OSX
 rm -rf ~/.xrayconfig
 rm -rf ~/.zshrc
+rm -rf ~/apps/oh-my-zsh/themes/ys-custom.zsh-theme ## Remove the existing themes if any
 rm -rf ~/.pryrc
 
 ## Clojure Development
@@ -69,4 +70,8 @@ mkdir -p ~/.lein
 ln -s $DOTFILES/clojure/profiles.clj $HOME/.lein/profiles.clj
 
 git config --global core.excludesfile '~/.gitignore'
+
+## Extras - use custom theme for NPM/NVM stuffs
+ln -s $PRIVATE_DOTFILES/dot-config/ys-custom.zsh-theme ~/apps/oh-my-zsh/themes/ys-custom.zsh-theme
+
 echo "Happy Hacking!"!
