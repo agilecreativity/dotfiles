@@ -79,3 +79,4 @@ screenshots/
 ## Ignore some config
 local-config.edn
 *-OLD
+a-*.txt
