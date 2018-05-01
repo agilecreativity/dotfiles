@@ -18,11 +18,10 @@ if [[ $platform == 'Linux' ]]; then
   ZSH_THEME="bureau"
 elif [[ $platform == 'Darwin' ]]; then
   ## See: https://github.com/robbyrussell/oh-my-zsh/wiki/themes
-  ## Nice theme
-  #ZSH_THEME="bira"
+  ZSH_THEME="bira"
   #ZSH_THEME="ys"
   #ZSH_THEME="agnoster" ## Nice alternative theme
-  ZSH_THEME="bureau"    ## Theme with NPM info on the right
+  #ZSH_THEME="bureau"    ## Theme with NPM info on the right
 else
   # Use the default theme, otherwise
   ZSH_THEME="robbyrussell"
