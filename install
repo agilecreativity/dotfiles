@@ -30,6 +30,7 @@ rm -rf ~/.pryrc
 rm -rf ~/.boot/boot.properties
 rm -rf ~/.boot/profile.boot
 rm -rf ~/.lein/profiles.clj
+rm -rf ~/.clojure/deps.edn
 
 ## AWS Configuration
 rm -rf $HOME/.aws
@@ -68,6 +69,9 @@ ln -s $DOTFILES/clojure/profile.boot $HOME/.boot/profile.boot
 
 mkdir -p ~/.lein
 ln -s $DOTFILES/clojure/profiles.clj $HOME/.lein/profiles.clj
+
+mkdir -p ~/.clojure
+ln -s $DOTFILES/clojure/deps.edn $HOME/.clojure/deps.edn
 
 git config --global core.excludesfile '~/.gitignore'
 
