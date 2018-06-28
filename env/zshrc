@@ -18,14 +18,14 @@ if [[ $platform == 'Linux' ]]; then
   ZSH_THEME="bureau"
 elif [[ $platform == 'Darwin' ]]; then
   ## See: https://github.com/robbyrussell/oh-my-zsh/wiki/themes
-  #ZSH_THEME="bira"
+  ZSH_THEME="bira"
   #ZSH_THEME="ys"
-  #ZSH_THEME="bureau"   ## Theme with NPM info on the right
-  #ZSH_THEME="agnoster" ## Nice alternative theme
-  ZSH_THEME="robbyrussell"
+  #ZSH_THEME="bureau"      ## Theme with NPM info on the right
+  #ZSH_THEME="agnoster"    ## Nice alternative theme
+  #ZSH_THEME="robbyrussell" ## Back to the basic
 else
   # Use the default theme, otherwise
-  ZSH_THEME="robbyrussell"
+  ZSH_THEME="robbyrussell" ## Back to the basic
 fi
 
 # Uncomment the following line to use case-sensitive completion.
@@ -39,7 +39,7 @@ HYPHEN_INSENSITIVE="true"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-export UPDATE_ZSH_DAYS=13
+export UPDATE_ZSH_DAYS=15
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -119,6 +119,7 @@ if [[ $platform == 'Linux' ]]; then
   export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/.rbenv:$PATH"
   eval "$(rbenv init -)"
 elif [[ $platform == 'Darwin' ]]; then
+  ## Note: may be deprecated this section!
   export PATH=$BOXEN_HOME/bin:$PATH
   export PATH=$BOXEN_HOME/homebrew/bin:$PATH
   export PATH=$BOXEN_HOME/homebrew/sbin:$PATH
