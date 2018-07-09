@@ -167,3 +167,8 @@ fi
 export PATH=/usr/local/bin:$PATH
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+## Use older/specific version of MySQL for Oracle's work
+if [ -f "/usr/local/opt/mysql@5.7/bin" ]; then
+  export PATH=$PATH:/usr/local/opt/mysql@5.7/bin
+fi
