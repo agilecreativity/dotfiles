@@ -16,11 +16,11 @@ git clone https://github.com/agilecreativity/dotfiles.git $HOME/apps/dotfiles
 mkdir -p ~/.ssh
 chmod 0700 ~/.ssh
 cp ~/apps/private-dotfiles/github/dot-ssh/* ~/.ssh/
-cd ~/.ssh && ./set-permission
+cd ~/.ssh && ./setup-ssh-keys
 
 ## Then clone the rest of the dotfiles
-git clone git@github.com:agilecreativity/dotvim.git ~/apps/dotvim
-git clone git@github.com:agilecreativity/dotemacs-prelude.git ~/apps/dotemacs-prelude
+#git clone git@github.com:agilecreativity/dotvim.git ~/apps/dotvim
+#git clone git@github.com:agilecreativity/dotemacs-prelude.git ~/apps/dotemacs-prelude
 
 ## Setup fonts for use with Emacs
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/agilecreativity/sudo-make-install/master/scripts/install-source-code-pro-fonts)"
+#sh -c "$(curl -fsSL https://raw.githubusercontent.com/agilecreativity/sudo-make-install/master/scripts/install-source-code-pro-fonts)"
