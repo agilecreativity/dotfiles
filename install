@@ -76,6 +76,6 @@ ln -s $DOTFILES/clojure/deps.edn $HOME/.clojure/deps.edn
 git config --global core.excludesfile '~/.gitignore'
 
 ## Extras - use custom theme for NPM/NVM stuffs
-ln -s $PRIVATE_DOTFILES/dot-config/ys-custom.zsh-theme ~/apps/oh-my-zsh/themes/ys-custom.zsh-theme
+#ln -s $PRIVATE_DOTFILES/dot-config/ys-custom.zsh-theme ~/apps/oh-my-zsh/themes/ys-custom.zsh-theme
 
 echo "Happy Hacking!"!
