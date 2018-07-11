@@ -116,8 +116,8 @@ export PATH=/usr/local/sbin:$PATH
 ## Settings for rbenv based on the platform we are on {{{
 platform=`uname`
 if [[ $platform == 'Linux' ]]; then
-  export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/.rbenv:$PATH"
-  eval "$(rbenv init -)"
+  #export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/.rbenv:$PATH"
+  #eval "$(rbenv init -)"
 elif [[ $platform == 'Darwin' ]]; then
   ## Note: may be deprecated this section!
   export PATH=$BOXEN_HOME/bin:$PATH
