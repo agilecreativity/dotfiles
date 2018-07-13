@@ -11,22 +11,26 @@ export ZSH=$HOME/apps/oh-my-zsh
 # or `git clone git@github.com:powerline/fonts.git; cd fonts; ./install.sh`
 # also https://gist.github.com/kevin-smets/8568070
 
-# Let's be very specific about what we need to make our life easier
+## See: https://github.com/robbyrussell/oh-my-zsh/wiki/themes
 platform=`uname`
 if [[ $platform == 'Linux' ]]; then
-  #ZSH_THEME="agnoster" ## Nice alternative theme
-  ZSH_THEME="bureau"
-elif [[ $platform == 'Darwin' ]]; then
-  ## See: https://github.com/robbyrussell/oh-my-zsh/wiki/themes
-  ZSH_THEME="bira"
+  ZSH_THEME="agnoster"
+  #ZSH_THEME="bira"
+  #ZSH_THEME="bureau"
+  #ZSH_THEME="robbyrussell"
   #ZSH_THEME="ys"
-  #ZSH_THEME="bureau"       ## Theme with NPM info on the right
-  #ZSH_THEME="agnoster"     ## Nice alternative theme
-  #ZSH_THEME="robbyrussell" ## Back to the basic
+elif [[ $platform == 'Darwin' ]]; then
+  ZSH_THEME="agnoster"
+  #ZSH_THEME="bira"
+  #ZSH_THEME="bureau"
+  #ZSH_THEME="robbyrussell"
+  #ZSH_THEME="ys"
 else
-  ## Use the default theme, otherwise
-  #ZSH_THEME="robbyrussell" ## Back to the basic
+  #ZSH_THEME="agnoster"
   ZSH_THEME="bira"
+  #ZSH_THEME="bureau"
+  #ZSH_THEME="robbyrussell"
+  #ZSH_THEME="ys"
 fi
 
 # Uncomment the following line to use case-sensitive completion.
@@ -80,7 +84,7 @@ plugins=(common-aliases gitignore git docker lein)
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -104,42 +108,24 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-###--------------------------------------------------------------###
-### Custom config start here {{{
-# Note: see the offending /etc/zsh/zshenv
-# comment them out so that the $gem env work correctly inside tmux
+## -------------------------------- ##
+## Custom configuration starts here ##
+## -------------------------------- ##
 
-## Common to both OSX/Ubuntu
 export PATH=/usr/bin:$PATH
 export PATH=/usr/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 
-## Settings for rbenv based on the platform we are on {{{
-platform=`uname`
+platform=`uname` # for checking OS specific setting
+
 if [[ $platform == 'Linux' ]]; then
-  #export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/.rbenv:$PATH"
-  #eval "$(rbenv init -)"
+  ## Linux specific settings
 elif [[ $platform == 'Darwin' ]]; then
-  ## Note: may be deprecated this section!
-  # export PATH=$BOXEN_HOME/bin:$PATH
-  # export PATH=$BOXEN_HOME/homebrew/bin:$PATH
-  # export PATH=$BOXEN_HOME/homebrew/sbin:$PATH
-  # export PATH=$BOXEN_HOME/nodenv/bin:$PATH
-  # export PATH=$BOXEN_HOME/nodenv/shims:$PATH
-  # export PATH=$BOXEN_HOME/rbenv/bin:$PATH
-  # export PATH=$BOXEN_HOME/rbenv/shims:$PATH
-  # export PATH=$BOXEN_HOME/ruby-build/bin:$PATH
-
-  ## For using Android on OSX
-  export ANDROID_HOME=$HOME/Library/Android/sdk
-  export PATH=$ANDROID_HOME/bin:$PATH
-  export PATH=$ANDROID_HOME/platform-tools:$PATH
-  export PATH=$ANDROID_HOME/tools:$PATH
+  ## OSX specific settings
 fi
-## }}}
 
-## Load public configurations {{
+## Load public configurations
 if [ -d ~/apps/dotfiles/env/ ]; then
   for i in ~/apps/dotfiles/env/*.sh; do
     if [ -r $i ]; then
@@ -148,9 +134,7 @@ if [ -d ~/apps/dotfiles/env/ ]; then
   done
   unset i
 fi
-## }}
 
-## Load private configurations {{
 if [ -d ~/apps/private-dotfiles/env ]; then
   for i in ~/apps/private-dotfiles/env/*.sh; do
     if [ -r $i ]; then
@@ -159,19 +143,23 @@ if [ -d ~/apps/private-dotfiles/env ]; then
   done
   unset i
 fi
-## }}
 
-## Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+## ruby version manager
 if [ -d ~/.rbenv ]; then
   export PATH=$HOME/.rvm/bin:$HOME/.rbenv/shims:$PATH
 fi
 
-## Make sure that /usr/local/bin comes last in the PATH
+## Make sure that /usr/local/bin comes first in the PATH
 export PATH=/usr/local/bin:$PATH
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+if [[ $platform == 'Darwin' ]]; then
+  ## OSX specific settings
+  test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-## Use older/specific version of MySQL for Oracle's work
-if [ -f "/usr/local/opt/mysql@5.7/bin" ]; then
-  export PATH=$PATH:/usr/local/opt/mysql@5.7/bin
+  ## Use older/specific version of MySQL for Oracle's work
+  if [ -f "/usr/local/opt/mysql@5.7/bin" ]; then
+    export PATH=$PATH:/usr/local/opt/mysql@5.7/bin
+  fi
+elif [[ $platform == 'Linux' ]]; then
+  ## Linux specific settings
 fi
