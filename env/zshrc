@@ -20,12 +20,13 @@ elif [[ $platform == 'Darwin' ]]; then
   ## See: https://github.com/robbyrussell/oh-my-zsh/wiki/themes
   ZSH_THEME="bira"
   #ZSH_THEME="ys"
-  #ZSH_THEME="bureau"      ## Theme with NPM info on the right
-  #ZSH_THEME="agnoster"    ## Nice alternative theme
+  #ZSH_THEME="bureau"       ## Theme with NPM info on the right
+  #ZSH_THEME="agnoster"     ## Nice alternative theme
   #ZSH_THEME="robbyrussell" ## Back to the basic
 else
-  # Use the default theme, otherwise
-  ZSH_THEME="robbyrussell" ## Back to the basic
+  ## Use the default theme, otherwise
+  #ZSH_THEME="robbyrussell" ## Back to the basic
+  ZSH_THEME="bira"
 fi
 
 # Uncomment the following line to use case-sensitive completion.
@@ -45,7 +46,7 @@ export UPDATE_ZSH_DAYS=15
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -56,12 +57,12 @@ COMPLETION_WAITING_DOTS="true"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -70,7 +71,8 @@ HIST_STAMPS="mm/dd/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(common-aliases gitignore git docker docker-compose lein bundler)
+#plugins=(common-aliases gitignore git docker docker-compose lein bundler)
+plugins=(common-aliases gitignore git docker lein)
 
 # User configuration
 
@@ -120,14 +122,15 @@ if [[ $platform == 'Linux' ]]; then
   #eval "$(rbenv init -)"
 elif [[ $platform == 'Darwin' ]]; then
   ## Note: may be deprecated this section!
-  export PATH=$BOXEN_HOME/bin:$PATH
-  export PATH=$BOXEN_HOME/homebrew/bin:$PATH
-  export PATH=$BOXEN_HOME/homebrew/sbin:$PATH
-  export PATH=$BOXEN_HOME/nodenv/bin:$PATH
-  export PATH=$BOXEN_HOME/nodenv/shims:$PATH
-  export PATH=$BOXEN_HOME/rbenv/bin:$PATH
-  export PATH=$BOXEN_HOME/rbenv/shims:$PATH
-  export PATH=$BOXEN_HOME/ruby-build/bin:$PATH
+  # export PATH=$BOXEN_HOME/bin:$PATH
+  # export PATH=$BOXEN_HOME/homebrew/bin:$PATH
+  # export PATH=$BOXEN_HOME/homebrew/sbin:$PATH
+  # export PATH=$BOXEN_HOME/nodenv/bin:$PATH
+  # export PATH=$BOXEN_HOME/nodenv/shims:$PATH
+  # export PATH=$BOXEN_HOME/rbenv/bin:$PATH
+  # export PATH=$BOXEN_HOME/rbenv/shims:$PATH
+  # export PATH=$BOXEN_HOME/ruby-build/bin:$PATH
+
   ## For using Android on OSX
   export ANDROID_HOME=$HOME/Library/Android/sdk
   export PATH=$ANDROID_HOME/bin:$PATH
