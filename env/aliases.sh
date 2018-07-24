@@ -4,8 +4,7 @@ alias g-dot='cd ~/apps/private-dotfiles/'
 alias g-dot-pub='cd ~/apps/dotfiles/'
 alias g-download='cd ~/Downloads/'
 alias g-dropbox='cd ~/Dropbox/'
-alias g-scripts='cd ~/apps/pro-scripts/'
-#alias g-sp='cd ~/codes/others/spikes/'
+alias g-script='cd ~/apps/pro-scripts/'
 #alias g-tmux-starter='cd ~/apps/tmux-starter/'
 ## }}}
 

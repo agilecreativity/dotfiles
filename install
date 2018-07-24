@@ -62,6 +62,10 @@ chmod 755 $HOME/.aws
 chmod 600 $HOME/.aws/config
 chmod 600 $HOME/.aws/credentials
 
+mkdir -p $HOME/.pip
+rm -rf $HOME/.pip/pip.conf
+ln -s $PRIVATE_DOTFILES/dot-config/pip.conf $HOME/.pip/pip.conf
+
 ## For Clojure Development
 mkdir -p ~/.boot
 ln -s $DOTFILES/clojure/boot.properties $HOME/.boot/boot.properties
