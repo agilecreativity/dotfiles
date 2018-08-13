@@ -35,6 +35,9 @@ rm -rf ~/.clojure/deps.edn
 ## AWS Configuration
 rm -rf $HOME/.aws
 
+## OCI configuration
+rm -rf $HOME/.oci
+
 echo "Create new symlinks..."
 ln -s $DOTFILES/ack/ackrc $HOME/.ackrc
 ln -s $DOTFILES/agignore $HOME/.agignore
@@ -61,6 +64,21 @@ ln -s $PRIVATE_DOTFILES/github/dot-aws/credentials $HOME/.aws/credentials
 chmod 755 $HOME/.aws
 chmod 600 $HOME/.aws/config
 chmod 600 $HOME/.aws/credentials
+
+## For OCI stuffs
+mkdir -p $HOME/.oci
+cp $PRIVATE_DOTFILES/github/dot-oci/config                 $HOME/.oci/config
+cp $PRIVATE_DOTFILES/github/dot-oci/oci_api_key.pem        $HOME/.oci/oci_api_key.pem
+cp $PRIVATE_DOTFILES/github/dot-oci/oci_api_key_public.pem $HOME/.oci/oci_api_key_public.pem
+
+## Update the permission
+chmod 755 $HOME/.oci
+chmod 600 $HOME/.oci/config
+chmod 600 $HOME/.oci/oci_api_key.pem
+chmod 600 $HOME/.oci/oci_api_key_public.pem
+
+## Post installation on new computer (upload the public key through the console)
+## https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#How2
 
 mkdir -p $HOME/.pip
 rm -rf $HOME/.pip/pip.conf
