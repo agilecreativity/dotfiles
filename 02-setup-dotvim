@@ -1,0 +1,11 @@
+#!/bin/sh
+## This should be done after 00-setup-oh-my-zsh and ./01-setup-ssh-keys
+mkdir -p ~/apps
+git clone git@github.com:agilecreativity/dotvim.git ~/apps/dotvim
+echo "You probably need to open vim at least once to have the NeoBundle install your plugins"
+
+## Setup fonts for use with Emacs
+#sh -c "$(curl -fsSL https://raw.githubusercontent.com/agilecreativity/sudo-make-install/master/scripts/install-source-code-pro-fonts)"
+
+## TODO: adjust this to install Spacemacs instead
+#git clone git@github.com:agilecreativity/dotemacs-prelude.git ~/apps/dotemacs-prelude
