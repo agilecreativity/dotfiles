@@ -169,4 +169,3 @@ if [[ $platform == 'Darwin' ]]; then
 elif [[ $platform == 'Linux' ]]; then
   ## Linux specific settings
 fi
-

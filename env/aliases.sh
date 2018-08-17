@@ -32,12 +32,6 @@ alias rm='nocorrect rm'
 alias w3m='noglob w3m -no-mouse'
 alias wget='noglob wget'
 
-# Useful bundle aliases
-# alias be=' bundle exec'
-# alias ber='bundle exec rake'
-# alias bes='bundle exec rspec'
-# alias bec='bundle exec cucumber'
-
 # When working with Vagrant
 alias ssh-vagrant='ssh deploy@33.33.33.33'
 ## }}}
@@ -103,7 +97,6 @@ platform=`uname`
 if [[ $platform == 'Linux' ]]; then
   alias a='ls -lrth --color'
   alias n='nautilus `pwd` &'
-  ##alias chrome='/usr/bin/google-chrome'
 elif [[ $platform == 'Darwin' ]]; then
   alias a='ls -lrthG'
 fi

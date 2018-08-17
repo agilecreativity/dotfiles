@@ -1,13 +1,9 @@
 #!/bin/bash
-
-## If Emacs is your things {{{
 export EDITOR="emacs -nw"
 export VISUAL="emacs -nw"
-## }}}
 
-## If Vim is your editor of the month then {{{
 ## Bind the key to Vi for Zsh instead of Emacs!
-## See: http://www.cs.elte.hu/zsh-manual/zsh_16.html
+## http://www.cs.elte.hu/zsh-manual/zsh_16.html
 ## http://dougblack.io/words/zsh-vi-mode.html
 ## http://zsh.sourceforge.net/Intro/intro_10.html
 
@@ -24,12 +20,9 @@ export VISUAL="emacs -nw"
 
 ## Use 10ms for key sequences instead of 0.4 seconds
 #export KEYTIMEOUT=1
-## }}}
 
-## Misc Settings {{{
-## Fix the vim's color when running inside Tmux
+## Fix Vim's color when running inside Tmux
 export TERM=screen-256color
 
 ## Don't clear screen after a command (better with `git status`)
 export LESS=-RX
-## }}}
