@@ -12,7 +12,6 @@ rm -rf ~/.agignore
 rm -rf ~/.aprc
 rm -rf ~/.editorconfig
 rm -rf ~/.gitconfig
-rm -rf ~/.gitconfig
 rm -rf ~/.gitignore
 rm -rf ~/.tmux.conf
 
