@@ -161,11 +161,11 @@ if [[ $platform == 'Darwin' ]]; then
     export PATH=$PATH:/usr/local/opt/mysql@5.7/bin
   fi
 
-  # ## As work around to make it possible to use older verion of Python (e.g. 3.6.x)
-  # if [ -d $(pyenv root)/shims ]; then
-  #   ## This allow us to use the python version from pyenv instead of the one in /usr/local/bin
-  #   export PATH=$(pyenv root)/shims:$PATH
-  # fi
+  ## As work around to make it possible to use older verion of Python (e.g. 3.6.x)
+  if [ -d $(pyenv root)/shims ]; then
+    ## This allow us to use the python version from pyenv instead of the one in /usr/local/bin
+    export PATH=$(pyenv root)/shims:$PATH
+  fi
 elif [[ $platform == 'Linux' ]]; then
   ## Linux specific settings
 fi
