@@ -23,6 +23,7 @@ rm -rf ~/.tmux.conf
 ## NOTE: need to adjust this if running under Linux instead of OSX
 rm -rf ~/.xrayconfig
 rm -rf ~/.zshrc
+rm -rf ~/.zshenv
 rm -rf ~/apps/oh-my-zsh/themes/ys-custom.zsh-theme ## Remove the existing themes if any
 rm -rf ~/.pryrc
 
@@ -49,7 +50,9 @@ ln -s $DOTFILES/gitignore $HOME/.gitignore
 ln -s $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
 ln -s $DOTFILES/xrayconfig $HOME/.xrayconfig
 ln -s $DOTFILES/pryrc $HOME/.pryrc
+
 ln -s $PRIVATE_DOTFILES/gitconfig $HOME/.gitconfig
+ln -s $PRIVATE_DOTFILES/dot-config/dot-zshenv $HOME/.zshenv
 
 ## Extra config
 ## TODO: have logic to switch based on the location or env variable
