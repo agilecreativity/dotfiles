@@ -38,6 +38,8 @@ rm -rf $HOME/.aws
 
 ## OCI configuration
 rm -rf $HOME/.oci
+rm -rf $HOME/.jabba/default.alias
+rm -rf $HOME/.jabbarc
 
 echo "Create new symlinks..."
 ln -s $DOTFILES/ack/ackrc $HOME/.ackrc
@@ -52,6 +54,10 @@ ln -s $DOTFILES/pryrc $HOME/.pryrc
 
 ln -s $PRIVATE_DOTFILES/gitconfig $HOME/.gitconfig
 ln -s $PRIVATE_DOTFILES/dot-config/dot-zshenv $HOME/.zshenv
+
+## Manage Java with Jabba https://github.com/shyiko/jabba
+ln -s $PRIVATE_DOTFILES/dot-config/default.alias $HOME/.jabba/default.alias
+ln -s $PRIVATE_DOTFILES/dot-config/dot-jabbarc   $HOME/.jabbarc
 
 ## Extra config
 ## TODO: have logic to switch based on the location or env variable
