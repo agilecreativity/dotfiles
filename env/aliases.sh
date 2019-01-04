@@ -96,7 +96,7 @@ alias t-kill='tmux kill-session -t'
 platform=`uname`
 if [[ $platform == 'Linux' ]]; then
   alias a='ls -lrth --color'
-  alias n='nautilus `pwd` &'
+  alias nn='nautilus `pwd` &'
 elif [[ $platform == 'Darwin' ]]; then
   alias a='ls -lrthG'
 fi
