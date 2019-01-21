@@ -33,9 +33,6 @@ rm -rf ~/.lein/profiles.clj
 rm -rf ~/.clojure/deps.edn
 rm -rf ~/.closhrc
 
-## AWS Configuration
-rm -rf $HOME/.aws
-
 ## OCI configuration
 rm -rf $HOME/.oci
 rm -rf $HOME/.jabba/default.alias
@@ -66,8 +63,11 @@ ln -s $PRIVATE_DOTFILES/dot-config/dot-jabbarc   $HOME/.jabbarc
 #ln -s $PRIVATE_DOTFILES/dot-config/settings-personal.xml ~/.m2/settings.xml
 
 ## Setup the AWS config directory and re-populate from known location
+## AWS Configuration
+rm -rf $HOME/.aws
 mkdir -p $HOME/.aws
-ln -s $PRIVATE_DOTFILES/github/dot-aws/config $HOME/.aws/config
+
+ln -s $PRIVATE_DOTFILES/github/dot-aws/config      $HOME/.aws/config
 ln -s $PRIVATE_DOTFILES/github/dot-aws/credentials $HOME/.aws/credentials
 
 chmod 755 $HOME/.aws
@@ -92,6 +92,9 @@ chmod 600 $HOME/.oci/oci_api_key_public.pem
 mkdir -p $HOME/.pip
 rm -rf $HOME/.pip/pip.conf
 ln -s $PRIVATE_DOTFILES/dot-config/pip.conf $HOME/.pip/pip.conf
+
+rm -rf ~/.ideavimrc
+ln -s $PRIVATE_DOTFILES/dot-config/dot-ideavimrc $HOME/.ideavimrc
 
 ## For Clojure Development
 mkdir -p ~/.boot
