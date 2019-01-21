@@ -11,7 +11,7 @@
                   ;; A Leiningen plugin for a superior development environment
                   ;; See: [Introduction Blog Post](https://blog.venanti.us/ultra/)
                   ;; https://github.com/venantius/ultra
-                  [venantius/ultra "0.5.2"]
+                  ;;[venantius/ultra "0.5.2"]
 
                   ;; Pretty-print a representation of the project map
                   [lein-pprint "1.2.0"]
