@@ -18,6 +18,8 @@
                   ;; Keep adding more stuff here
                   ]
         ;; Experimental
-        :dependencies [[pjstadig/humane-test-output "0.8.3"]]
+        :dependencies [[pjstadig/humane-test-output "0.8.3"]
+                       ;; See: https://github.com/pallet/alembic
+                       [alembic "0.3.2"]]
         :injections [(require 'pjstadig.humane-test-output)
                      (pjstadig.humane-test-output/activate!)]}}
