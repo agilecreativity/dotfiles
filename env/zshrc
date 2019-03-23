@@ -174,3 +174,7 @@ if [[ $platform == 'Darwin' ]]; then
 elif [[ $platform == 'Linux' ]]; then
   ## Linux specific settings
 fi
+
+## Override the aliase defined by oh-myzsh in common-aliases and use fd
+## e.g. we want to use [fd](https://github.com/sharkdp/fd) for file search
+unalias fd
