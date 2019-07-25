@@ -75,6 +75,9 @@ chmod 600 $HOME/.aws/config
 chmod 600 $HOME/.aws/credentials
 
 ## For OCI stuffs
+## TODO:
+## - Since we make a copy of the config, we need to manually update the source of the code e.g. in PRIVATE_DOTFILES
+## - Can we use the symlink instead?
 mkdir -p $HOME/.oci
 cp $PRIVATE_DOTFILES/github/dot-oci/config                 $HOME/.oci/config
 cp $PRIVATE_DOTFILES/github/dot-oci/oci_api_key.pem        $HOME/.oci/oci_api_key.pem
