@@ -89,9 +89,12 @@ chmod 600 $HOME/.oci/oci_api_key_public.pem
 ## Post installation on new computer (upload the public key through the console)
 ## https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#How2
 
+## Python and related setup
 mkdir -p $HOME/.pip
 rm -rf $HOME/.pip/pip.conf
+## See: https://gitlab.oracledatacloud.com/infra-core/ssh-key-ad-util/blob/master/README.md
 ln -s $PRIVATE_DOTFILES/dot-config/pip.conf $HOME/.pip/pip.conf
+ln -s $PRIVATE_DOTFILES/dot-pypirc          $HOME/.pypirc
 
 rm -rf ~/.ideavimrc
 ln -s $PRIVATE_DOTFILES/dot-config/dot-ideavimrc $HOME/.ideavimrc
