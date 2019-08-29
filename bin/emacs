@@ -1,0 +1,4 @@
+#!/bin/sh
+## https://emacsformacosx.com/tips
+## Tips: symlink to /usr/local/bin/emacs
+/Applications/Emacs.app/Contents/MacOS/Emacs "$@"
