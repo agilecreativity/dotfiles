@@ -5,7 +5,6 @@ alias g-dot-pub='cd ~/apps/dotfiles/'
 alias g-download='cd ~/Downloads/'
 alias g-dropbox='cd ~/Dropbox/'
 alias g-script='cd ~/apps/pro-scripts/'
-#alias g-tmux-starter='cd ~/apps/tmux-starter/'
 ## }}}
 
 # Useful aliases {{{
@@ -14,7 +13,6 @@ alias v-e-pub='vim ~/apps/dotfiles/env/env.sh'
 
 alias v-a='vim ~/apps/private-dotfiles/env/aliases.sh'
 alias v-e='vim ~/apps/private-dotfiles/env/env.sh'
-
 alias v='vim'
 alias vn='vim -c "NERDTree"'
 alias vt='vim -c "CommandT"'
