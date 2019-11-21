@@ -1,4 +1,9 @@
-#!/bin/sh
-## https://emacsformacosx.com/tips
-## Tips: symlink to /usr/local/bin/emacs
-/Applications/Emacs.app/Contents/MacOS/Emacs "$@"
+#!/usr/bin/env bash
+platform=`uname`
+if [[ $platform == 'Linux' ]]; then
+  /usr/bin/emacs "$@"
+elif [[ $platform == 'Darwin' ]]; then
+  ## https://emacsformacosx.com/tips
+  ## Tips: symlink to /usr/local/bin/emacs
+  /Applications/Emacs.app/Contents/MacOS/Emacs "$@"
+fi
