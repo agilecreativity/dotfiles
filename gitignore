@@ -67,15 +67,11 @@ GTAGS
 ## Clojure/ClojureScript
 .lumo_cache/*
 
-## Others
-start-sequoia-service
-start-integration-test
-dependency-tree.txt
-lein-dep-tree.txt
 ## Misc
 screenshots/
 .lein-failures
 .nrepl-port
+
 ## Ignore some config
 local-config.edn
 *-OLD
