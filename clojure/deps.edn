@@ -8,51 +8,58 @@
 ;;
 ;; For all attributes other than :paths, these config files are merged left to right.
 ;; Only the last :paths is kept and others are dropped.
-
 {
-  ;; Paths
-  ;;   Directories in the current project to include in the classpath
+ ;; Paths
+ ;;   Directories in the current project to include in the classpath
 
-  ;; :paths ["src"]
+ ;; :paths ["src"]
 
-  ;; External dependencies
+ ;; External dependencies
 
-  ;; :deps {
-  ;;   org.clojure/clojure {:mvn/version "1.9.0"}
-  ;; }
+ ;; :deps {
+ ;;   org.clojure/clojure {:mvn/version "1.9.0"}
+ ;; }
 
-  ;; Aliases
-    ;;   resolve-deps aliases (-R) affect dependency resolution, options:
-    ;;     :extra-deps - specifies extra deps to add to :deps
-    ;;     :override-deps - specifies a coordinate to use instead of that in :deps
-    ;;     :default-deps - specifies a coordinate to use for a lib if one isn't found
-    ;;   make-classpath aliases (-C) affect the classpath generation, options:
-    ;;     :extra-paths - vector of additional paths to add to the classpath
-    ;;     :classpath-overrides - map of lib to path that overrides the result of resolving deps
+ ;; Aliases
+ ;;   resolve-deps aliases (-R) affect dependency resolution, options:
+ ;;     :extra-deps - specifies extra deps to add to :deps
+ ;;     :override-deps - specifies a coordinate to use instead of that in :deps
+ ;;     :default-deps - specifies a coordinate to use for a lib if one isn't found
+ ;;   make-classpath aliases (-C) affect the classpath generation, options:
+ ;;     :extra-paths - vector of additional paths to add to the classpath
+ ;;     :classpath-overrides - map of lib to path that overrides the result of resolving deps
 
-  ;; :aliases {
-  ;;   :deps {:extra-deps {org.clojure/tools.deps.alpha {:mvn/version "0.5.351"}}}
-  ;;   :test {:extra-paths ["test"]}
-  ;; }
+ ;; :aliases {
+ ;;   :deps {:extra-deps {org.clojure/tools.deps.alpha {:mvn/version "0.5.351"}}}
+ ;;   :test {:extra-paths ["test"]}
+ ;; }
 
-  ;; Use rebel-readline for awesome REPL experience!
-  ;; clj -A:rebel
-  :aliases {:rebel {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.3"}}
-                    :main-opts ["-m" "rebel-readline.main"]}
-            :depify {:extra-deps {org.clojure/clojure {:mvn/version "1.9.0"}
-                                  depify {:git/url "https://github.com/hagmonk/depify"
-                                          :sha "04329744872890711dbba8939a16e9987dd33bb3"}}
+ :aliases {;; clj -A:rebel
+           :rebel {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
+                   :main-opts ["-m" "rebel-readline.main"]}
+
+           ;; clj -A:depify
+           ;; clj -A:depify | clj -A:zprint > deps.edn.tmp ; mv deps.edn.tmp deps.edn '
+           :depify {:extra-deps {org.clojure/clojure {:mvn/version "1.9.0"}
+                                 depify {:git/url "https://github.com/hagmonk/depify"
+                                         :sha "04329744872890711dbba8939a16e9987dd33bb3"}}
                     :main-opts ["-m" "depify.project"]}
-            :zprint {:extra-deps {org.clojure/clojure {:mvn/version "1.9.0"}
-                                  zprint {:mvn/version "0.4.9"}}
-                    :main-opts ["-m" "zprint.main"]}
-            ;; See: https://github.com/danielsz/meyvn
-            :meyvn  {:extra-deps {org.danielsz/meyvn {:mvn/version "1.0.5"}}}
-            }
 
-  ;; Provider attributes
-  ;; :mvn/repos {
-  ;;   "central" {:url "https://repo1.maven.org/maven2/"}
-  ;;   "clojars" {:url "https://clojars.org/repo"}
-  ;; }
-}
+           ;; clj -A:zprint
+           :zprint {:extra-deps {org.clojure/clojure {:mvn/version "1.9.0"}
+                                 zprint {:mvn/version "0.5.3"}}
+                    :main-opts ["-m" "zprint.main"]}
+
+           ;; clj -A:new app net.b12n/myapp && cd net/b12n/myapp && clj -m net.b12n.myapp
+           :new {:extra-deps {seancorfield/clj-new {:mvn/version "0.9.0"}}
+                 :main-opts ["-m" "clj-new.create"]}}
+
+ :deps {org.clojure/clojure {:mvn/version "1.9.0"}
+        zprint {:mvn/version "0.5.3"}}
+
+ ;; Provider attributes
+ ;; :mvn/repos {
+ ;;   "central" {:url "https://repo1.maven.org/maven2/"}
+ ;;   "clojars" {:url "https://clojars.org/repo"}
+ ;; }
+ }
