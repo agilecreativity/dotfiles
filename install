@@ -53,8 +53,8 @@ ln -s $PRIVATE_DOTFILES/gitconfig $HOME/.gitconfig
 ln -s $PRIVATE_DOTFILES/dot-config/dot-zshenv $HOME/.zshenv
 
 ## Manage Java with Jabba https://github.com/shyiko/jabba
-ln -s $PRIVATE_DOTFILES/dot-config/default.alias $HOME/.jabba/default.alias
-ln -s $PRIVATE_DOTFILES/dot-config/dot-jabbarc   $HOME/.jabbarc
+#ln -s $PRIVATE_DOTFILES/dot-config/default.alias $HOME/.jabba/default.alias
+#ln -s $PRIVATE_DOTFILES/dot-config/dot-jabbarc   $HOME/.jabbarc
 
 ## Extra config
 ## TODO: have logic to switch based on the location or env variable
