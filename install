@@ -97,7 +97,7 @@ mkdir -p $HOME/.pip
 rm -rf $HOME/.pip/pip.conf
 ## See: https://gitlab.oracledatacloud.com/infra-core/ssh-key-ad-util/blob/master/README.md
 ln -s $PRIVATE_DOTFILES/dot-config/pip.conf $HOME/.pip/pip.conf
-ln -s $PRIVATE_DOTFILES/dot-pypirc          $HOME/.pypirc
+ln -fs $PRIVATE_DOTFILES/dot-pypirc         $HOME/.pypirc
 
 rm -rf ~/.ideavimrc
 ln -s $PRIVATE_DOTFILES/dot-config/dot-ideavimrc $HOME/.ideavimrc
