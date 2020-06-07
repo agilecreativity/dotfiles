@@ -52,7 +52,13 @@
 
            ;; clj -A:new app net.b12n/myapp && cd net/b12n/myapp && clj -m net.b12n.myapp
            :new {:extra-deps {seancorfield/clj-new {:mvn/version "0.9.0"}}
-                 :main-opts ["-m" "clj-new.create"]}}
+                 :main-opts ["-m" "clj-new.create"]}
+
+           ;; https://github.com/liquidz/antq
+           ;; clojure -A:outdated
+           :outdated {:extra-deps {antq {:mvn/version "RELEASE"}}
+                      :main-opts ["-m" "antq.core"]}
+           }
 
  :deps {org.clojure/clojure {:mvn/version "1.9.0"}
         zprint {:mvn/version "0.5.3"}}
