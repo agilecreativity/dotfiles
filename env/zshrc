@@ -134,14 +134,6 @@ export PATH=/usr/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 
-platform=`uname` # for checking OS specific setting
-
-if [[ $platform == 'Linux' ]]; then
-  ## Linux specific settings
-elif [[ $platform == 'Darwin' ]]; then
-  ## OSX specific settings
-fi
-
 ## Load public configurations
 if [ -d ~/apps/dotfiles/env/ ]; then
   for i in ~/apps/dotfiles/env/*.sh; do
@@ -190,10 +182,13 @@ if [[ $platform == 'Darwin' ]]; then
 
 elif [[ $platform == 'Linux' ]]; then
   ## Linux specific settings
+  true
 fi
+
 ## Override the aliase defined by oh-myzsh in common-aliases and use fd
 ## e.g. we want to use [fd](https://github.com/sharkdp/fd) for file search
-unalias fd
+## $brew install fd
+unalias fd 2>/dev/null
 
 ## ========================================= ##
 ## ========================================= ##
