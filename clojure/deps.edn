@@ -60,7 +60,7 @@
                       :main-opts ["-m" "antq.core"]}
            }
 
- :deps {org.clojure/clojure {:mvn/version "1.9.0"}
+ :deps {org.clojure/clojure {:mvn/version "1.10.1"}
         zprint/zprint {:mvn/version "0.5.3"}}
 
  ;; Provider attributes
