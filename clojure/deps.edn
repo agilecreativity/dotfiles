@@ -41,13 +41,13 @@
            ;; clj -A:depify
            ;; clj -A:depify | clj -A:zprint > deps.edn.tmp ; mv deps.edn.tmp deps.edn '
            :depify {:extra-deps {org.clojure/clojure {:mvn/version "1.9.0"}
-                                 depify {:git/url "https://github.com/hagmonk/depify"
+                                 depify/depify {:git/url "https://github.com/hagmonk/depify"
                                          :sha "04329744872890711dbba8939a16e9987dd33bb3"}}
                     :main-opts ["-m" "depify.project"]}
 
            ;; clj -A:zprint
            :zprint {:extra-deps {org.clojure/clojure {:mvn/version "1.9.0"}
-                                 zprint {:mvn/version "0.5.3"}}
+                                 zprint/zprint {:mvn/version "0.5.3"}}
                     :main-opts ["-m" "zprint.main"]}
 
            ;; clj -A:new app net.b12n/myapp && cd net/b12n/myapp && clj -m net.b12n.myapp
@@ -56,12 +56,12 @@
 
            ;; https://github.com/liquidz/antq
            ;; clojure -A:outdated
-           :outdated {:extra-deps {antq {:mvn/version "RELEASE"}}
+           :outdated {:extra-deps {antq/antq {:mvn/version "RELEASE"}}
                       :main-opts ["-m" "antq.core"]}
            }
 
  :deps {org.clojure/clojure {:mvn/version "1.9.0"}
-        zprint {:mvn/version "0.5.3"}}
+        zprint/zprint {:mvn/version "0.5.3"}}
 
  ;; Provider attributes
  ;; :mvn/repos {
