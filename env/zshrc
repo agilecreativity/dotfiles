@@ -217,3 +217,5 @@ _fzf_compgen_dir() {
 ## }}
 ## ========================================= ##
 ## ========================================= ##
+## Testing only with $brew install starship
+#eval "$(starship init zsh)"
