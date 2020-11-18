@@ -35,7 +35,7 @@
  ;; }
 
  :aliases {;; clj -A:rebel
-           :rebel {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
+           :rebel {:extra-deps {com.bhauman/rebel-readline {:mvn/version "RELEASE"}}
                    :main-opts ["-m" "rebel-readline.main"]}
 
            ;; clj -A:depify
