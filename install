@@ -70,6 +70,8 @@ mkdir -p $HOME/.aws
 
 ln -s $PRIVATE_DOTFILES/github/dot-aws/config      $HOME/.aws/config
 ln -s $PRIVATE_DOTFILES/github/dot-aws/credentials $HOME/.aws/credentials
+## Extra for duo-cli usage
+ln -s $PRIVATE_DOTFILES/github/dot-aws/duo-config.edn $HOME/.aws/duo-config.edn
 
 chmod 755 $HOME/.aws
 chmod 600 $HOME/.aws/config
