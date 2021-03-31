@@ -220,3 +220,4 @@ _fzf_compgen_dir() {
 ## ========================================= ##
 ## Testing only with $brew install starship
 #eval "$(starship init zsh)"
+export PATH="/home/linuxbrew/.linuxbrew/opt/cython/bin:$PATH"

@@ -1,37 +1,23 @@
-tmp
-*.pdf
-*.log
-*.html
-tags
-vendor/plugins/*
-# my custom ignore files/directories
-#public/ext/*
-log
-doc
-coverage
+#build/
+#docs ## Note: we want to search ~/we/api/docs
 
-## Custom ignore related to some projects
+*.html
+*.log
+*.min.*
+*.pdf
 *.svg
 
-## nodejs directories
-dist/
-
-# TODO: turn this off for now, work better with VHA
-#app/assets/
-#tests/_vendor/
-build/
-
-## specific libraries
-node_modules/
+app/assets/stylesheets/usds/
 app/lib/underscore.js
 
-## ignore the minified version
-*.min.*
-vendor/gems/
-vendor/bundle/
+coverage
+dist/
+log
+node_modules/
+tags
+tmp
 vendor/assets/javascripts/
 vendor/assets/stylesheets/
-app/assets/stylesheets/usds/
-
-## misc
-start-sequoia-service
+vendor/bundle/
+vendor/gems/
+vendor/plugins/*
