@@ -156,7 +156,7 @@ fi
 
 ## ruby version manager
 if [ -d ~/.rbenv ]; then
-  export PATH=$HOME/.rvm/bin:$HOME/.rbenv/shims:$PATH
+  export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
 fi
 
 ## Make sure that /usr/local/bin comes first in the PATH
@@ -166,21 +166,11 @@ if [[ $platform == 'Darwin' ]]; then
   ## OSX specific settings
   test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-  ## Use older/specific version of MySQL for Oracle's work
-  if [ -f "/usr/local/opt/mysql@5.7/bin" ]; then
-    export PATH=$PATH:/usr/local/opt/mysql@5.7/bin
-  fi
-
   ## As work around to make it possible to use older verion of Python (e.g. 3.6.x)
   # if [ -d $(pyenv root)/shims ]; then
   #   ## This allow us to use the python version from pyenv instead of the one in /usr/local/bin
   #   export PATH=$(pyenv root)/shims:$PATH
   # fi
-
-  ## Temporary override the Jabba's Java settings
-  #export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-  #export PATH=$JAVA_HOME/bin:$PATH
-
 elif [[ $platform == 'Linux' ]]; then
   ## Linux specific settings
   true
