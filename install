@@ -24,6 +24,7 @@ rm -rf $HOME/.closhrc
 rm -rf $HOME/.lein/profiles.clj
 
 echo "Create new symlinks..."
+ln -s $DOTFILES/env/zshrc      $HOME/.zshrc
 ln -s $DOTFILES/ack/ackrc      $HOME/.ackrc
 ln -s $DOTFILES/agignore       $HOME/.agignore
 ln -s $DOTFILES/aprc           $HOME/.aprc

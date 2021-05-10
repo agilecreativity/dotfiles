@@ -173,6 +173,7 @@ if [[ $platform == 'Darwin' ]]; then
   # fi
 elif [[ $platform == 'Linux' ]]; then
   ## Linux specific settings
+  export PATH="/home/linuxbrew/.linuxbrew/opt/cython/bin:$PATH"
   true
 fi
 
@@ -210,8 +211,3 @@ _fzf_compgen_dir() {
 ## ========================================= ##
 ## Testing only with $brew install starship
 #eval "$(starship init zsh)"
-export PATH="/home/linuxbrew/.linuxbrew/opt/cython/bin:$PATH"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-#export SDKMAN_DIR="/home/b12n/.sdkman"
-#[[ -s "/home/b12n/.sdkman/bin/sdkman-init.sh" ]] && source "/home/b12n/.sdkman/bin/sdkman-init.sh"
