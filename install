@@ -1,127 +1,47 @@
 #/usr/bin/env bash
-set -e
+set -exo pipefail
 
 # The public dotfiles
 DOTFILES=$HOME/apps/dotfiles
 PRIVATE_DOTFILES=$HOME/apps/private-dotfiles
 
-# Remove existing symlinks first! (destructive)
 echo "Remove old symlinks..."
-rm -rf ~/.ackrc
-rm -rf ~/.agignore
-rm -rf ~/.aprc
-rm -rf ~/.editorconfig
-rm -rf ~/.gitconfig
-rm -rf ~/.gitignore
-rm -rf ~/.tmux.conf
-
-## Extra settings
-#rm -rf ~/.npmrc
-#rm -rf ~/.m2/settings.xml
-
-## NOTE: need to adjust this if running under Linux instead of OSX
-rm -rf ~/.xrayconfig
-rm -rf ~/.zshrc
-rm -rf ~/.zshenv
-rm -rf ~/apps/oh-my-zsh/themes/ys-custom.zsh-theme ## Remove the existing themes if any
-rm -rf ~/.pryrc
+rm -rf $HOME/.ackrc
+rm -rf $HOME/.agignore
+rm -rf $HOME/.aprc
+rm -rf $HOME/.editorconfig
+rm -rf $HOME/.tmux.conf
+rm -rf $HOME/.xrayconfig
+rm -rf $HOME/.zshrc
+rm -rf $HOME/apps/oh-my-zsh/themes/ys-custom.zsh-theme
+rm -rf $HOME/.pryrc
 
 ## Clojure Development
-rm -rf ~/.boot/boot.properties
-rm -rf ~/.boot/profile.boot
-rm -rf ~/.lein/profiles.clj
-rm -rf ~/.clojure/deps.edn
-rm -rf ~/.closhrc
-
-## OCI configuration
-rm -rf $HOME/.oci
-rm -rf $HOME/.jabba/default.alias
-rm -rf $HOME/.jabbarc
+rm -rf $HOME/.boot/boot.properties
+rm -rf $HOME/.boot/profile.boot
+rm -rf $HOME/.clojure/deps.edn
+rm -rf $HOME/.closhrc
+rm -rf $HOME/.lein/profiles.clj
 
 echo "Create new symlinks..."
-ln -s $DOTFILES/ack/ackrc $HOME/.ackrc
-ln -s $DOTFILES/agignore $HOME/.agignore
-ln -s $DOTFILES/aprc $HOME/.aprc
-ln -s $DOTFILES/editorconfig $HOME/.editorconfig
-ln -s $DOTFILES/env/zshrc $HOME/.zshrc
-ln -s $DOTFILES/gitignore $HOME/.gitignore
+ln -s $DOTFILES/ack/ackrc      $HOME/.ackrc
+ln -s $DOTFILES/agignore       $HOME/.agignore
+ln -s $DOTFILES/aprc           $HOME/.aprc
+ln -s $DOTFILES/editorconfig   $HOME/.editorconfig
+ln -s $DOTFILES/pryrc          $HOME/.pryrc
 ln -s $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
-ln -s $DOTFILES/xrayconfig $HOME/.xrayconfig
-ln -s $DOTFILES/pryrc $HOME/.pryrc
-
-ln -s $PRIVATE_DOTFILES/gitconfig $HOME/.gitconfig
-ln -s $PRIVATE_DOTFILES/dot-config/dot-zshenv $HOME/.zshenv
-
-## Manage Java with Jabba https://github.com/shyiko/jabba
-## TODO: you may need to comment this out on the very first install (while zsh is not your default)
-ln -s $PRIVATE_DOTFILES/dot-config/default.alias $HOME/.jabba/default.alias
-ln -s $PRIVATE_DOTFILES/dot-config/dot-jabbarc   $HOME/.jabbarc
-
-## Extra config
-## TODO: have logic to switch based on the location or env variable
-## e.g. when you are at home vs at work?
-#ln -s $PRIVATE_DOTFILES/dot-config/npmrc-personal $HOME/.npmrc
-#ln -s $PRIVATE_DOTFILES/dot-config/settings-personal.xml ~/.m2/settings.xml
-
-## Setup the AWS config directory and re-populate from known location
-## AWS Configuration
-rm -rf $HOME/.aws
-mkdir -p $HOME/.aws
-
-ln -s $PRIVATE_DOTFILES/github/dot-aws/config      $HOME/.aws/config
-ln -s $PRIVATE_DOTFILES/github/dot-aws/credentials $HOME/.aws/credentials
-## Extra for duo-cli usage
-ln -s $PRIVATE_DOTFILES/github/dot-aws/duo-config.edn $HOME/.aws/duo-config.edn
-
-chmod 755 $HOME/.aws
-chmod 600 $HOME/.aws/config
-chmod 600 $HOME/.aws/credentials
-
-## For OCI stuffs
-## TODO:
-## - Since we make a copy of the config, we need to manually update the source of the code e.g. in PRIVATE_DOTFILES
-## - Can we use the symlink instead?
-mkdir -p $HOME/.oci
-cp $PRIVATE_DOTFILES/github/dot-oci/config                 $HOME/.oci/config
-cp $PRIVATE_DOTFILES/github/dot-oci/oci_api_key.pem        $HOME/.oci/oci_api_key.pem
-cp $PRIVATE_DOTFILES/github/dot-oci/oci_api_key_public.pem $HOME/.oci/oci_api_key_public.pem
-
-## Update the permission
-chmod 755 $HOME/.oci
-chmod 600 $HOME/.oci/config
-chmod 600 $HOME/.oci/oci_api_key.pem
-chmod 600 $HOME/.oci/oci_api_key_public.pem
-
-## Post installation on new computer (upload the public key through the console)
-## https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#How2
-
-## Python and related setup
-mkdir -p $HOME/.pip
-rm -rf $HOME/.pip/pip.conf
-## See: https://gitlab.oracledatacloud.com/infra-core/ssh-key-ad-util/blob/master/README.md
-ln -s $PRIVATE_DOTFILES/dot-config/pip.conf $HOME/.pip/pip.conf
-ln -fs $PRIVATE_DOTFILES/dot-pypirc         $HOME/.pypirc
-
-rm -rf ~/.ideavimrc
-ln -s $PRIVATE_DOTFILES/dot-config/dot-ideavimrc $HOME/.ideavimrc
+ln -s $DOTFILES/xrayconfig     $HOME/.xrayconfig
 
 ## For Clojure Development
 mkdir -p ~/.boot
 ln -s $DOTFILES/clojure/boot.properties $HOME/.boot/boot.properties
-ln -s $DOTFILES/clojure/profile.boot $HOME/.boot/profile.boot
+ln -s $DOTFILES/clojure/profile.boot    $HOME/.boot/profile.boot
 
 mkdir -p ~/.lein
-ln -s $DOTFILES/clojure/profiles.clj $HOME/.lein/profiles.clj
+ln -s $DOTFILES/clojure/profiles.clj    $HOME/.lein/profiles.clj
 
 mkdir -p ~/.clojure
-ln -s $DOTFILES/clojure/deps.edn $HOME/.clojure/deps.edn
+ln -s $DOTFILES/clojure/deps.edn        $HOME/.clojure/deps.edn
 
 ## Closh
-ln -s $DOTFILES/clojure/closhrc $HOME/.closhrc
-
-git config --global core.excludesfile '~/.gitignore'
-
-## Extras - use custom theme for NPM/NVM stuffs
-#ln -s $PRIVATE_DOTFILES/dot-config/ys-custom.zsh-theme ~/apps/oh-my-zsh/themes/ys-custom.zsh-theme
-
-echo "Happy Hacking!"!
+ln -s $DOTFILES/clojure/closhrc         $HOME/.closhrc
