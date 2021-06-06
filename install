@@ -22,6 +22,7 @@ rm -rf $HOME/.boot/profile.boot
 rm -rf $HOME/.clojure/deps.edn
 rm -rf $HOME/.closhrc
 rm -rf $HOME/.lein/profiles.clj
+rm -rf $HOME/.lsp
 
 echo "Create new symlinks..."
 ln -s $DOTFILES/env/zshrc      $HOME/.zshrc
@@ -38,11 +39,15 @@ mkdir -p ~/.boot
 ln -s $DOTFILES/clojure/boot.properties $HOME/.boot/boot.properties
 ln -s $DOTFILES/clojure/profile.boot    $HOME/.boot/profile.boot
 
-mkdir -p ~/.lein
-ln -s $DOTFILES/clojure/profiles.clj    $HOME/.lein/profiles.clj
+mkdir -p $HOME/.lein
+ln -s $DOTFILES/clojure/profiles.clj $HOME/.lein/profiles.clj
 
-mkdir -p ~/.clojure
-ln -s $DOTFILES/clojure/deps.edn        $HOME/.clojure/deps.edn
+mkdir -p $HOME/.clojure
+ln -s $DOTFILES/clojure/deps.edn $HOME/.clojure/deps.edn
+
+## Configuration for lsp mode
+mkdir -p $HOME/.lsp
+ln -s $DOTFILES/clojure/lsp-config.edn $HOME/.lsp/config.edn
 
 ## Closh
-ln -s $DOTFILES/clojure/closhrc         $HOME/.closhrc
+ln -s $DOTFILES/clojure/closhrc $HOME/.closhrc
