@@ -3,6 +3,7 @@
 ;; https://github.com/ericdallo/dotfiles/blob/master/.lsp/config.edn - the sample config
 ;; https://github.com/weavejester/cljfmt/blob/master/cljfmt/resources/cljfmt/indents/clojure.clj - official indentation rules
 ;; https://raw.githubusercontent.com/ericdallo/dotfiles/master/.lsp/config.edn
+;; https://github.com/clj-kondo/clj-kondo/blob/master/doc/config.md
 {
  #_#_:linters   {:unused-namespace-declarations #{"postman"}}
  #_#_:clj-kondo {:skip-comments true
