@@ -47,8 +47,8 @@ ln -s $DOTFILES/clojure/deps.edn $HOME/.clojure/deps.edn
 
 ## Configuration for lsp mode
 mkdir -p $HOME/.lsp
+rm -rf $HOME/.lsp/config.edn
 ln -s $DOTFILES/clojure/lsp-config.edn $HOME/.lsp/config.edn
-ln -s $DOTFILES/lib/lsp-config.edn $HOME/.lsp/config.edn
 
 rm -rf $HOME/bin/clojure-lsp-server-clj-kondo
 ln -s $DOTFILES/libs/lsp-server/clojure-lsp-server-clj-kondo $HOME/bin/clojure-lsp-server-clj-kondo
