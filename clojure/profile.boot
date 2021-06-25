@@ -1,5 +1,6 @@
 ;; https://github.com/boot-clj/boot/wiki/Cider-REPL
 ;; Note: should be symlink to ~/.boot/profile.boot
+#_
 (deftask cider "CIDER profile"
   []
   (require 'boot.repl)

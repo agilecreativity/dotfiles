@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+set -eo pipefail
+java -jar $HOME/apps/dotfiles/libs/lsp-server/clj-kondo-lsp-server-standalone.jar

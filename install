@@ -49,7 +49,9 @@ ln -s $DOTFILES/clojure/deps.edn $HOME/.clojure/deps.edn
 mkdir -p $HOME/.lsp
 ln -s $DOTFILES/clojure/lsp-config.edn $HOME/.lsp/config.edn
 ln -s $DOTFILES/lib/lsp-config.edn $HOME/.lsp/config.edn
-ln -fs $DOTFILES/libs/lsp-server/clj-kondo-lsp-server-standalone.jar $HOME/bin/clj-kondo-lsp-server-standalone.jar
+
+rm -rf $HOME/bin/clojure-lsp-server-clj-kondo
+ln -s $DOTFILES/libs/lsp-server/clojure-lsp-server-clj-kondo $HOME/bin/clojure-lsp-server-clj-kondo
 
 ## Closh
 ln -s $DOTFILES/clojure/closhrc $HOME/.closhrc
