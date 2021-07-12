@@ -1,7 +1,7 @@
 ;; NOTE: should be symlinked to ~/.shadow-cljs/config.edn
 ;; Shared by all projects, so keep this to the minimum
 ;; See: https://shadow-cljs.github.io/docs/UsersGuide.html#_dependencies
-{:dependencies [[cider/cider-nrepl "0.26.0"]]
+{:dependencies [[cider/cider-nrepl "0.25.9"]]
  ;; TODO: maybe turn this on
 ;:deps-aliases [:cider]
  }
