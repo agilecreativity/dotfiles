@@ -23,6 +23,8 @@ rm -rf $HOME/.clojure/deps.edn
 rm -rf $HOME/.closhrc
 rm -rf $HOME/.lein/profiles.clj
 rm -rf $HOME/.lsp
+rm -rf $HOME/.shadow-cljs/config.edn
+rm -rf $HOME/.shadow-cljs
 
 echo "Create new symlinks..."
 ln -s $DOTFILES/env/zshrc      $HOME/.zshrc
@@ -52,6 +54,9 @@ ln -s $DOTFILES/clojure/lsp-config.edn $HOME/.lsp/config.edn
 
 rm -rf $HOME/bin/clojure-lsp-server-clj-kondo
 ln -s $DOTFILES/libs/lsp-server/clojure-lsp-server-clj-kondo $HOME/bin/clojure-lsp-server-clj-kondo
+
+mkdir -p $HOME/.shadow-cljs
+ln -s $DOTFILES/clojure/shadow-cljs-config.edn $HOME/.shadow-cljs/config.edn
 
 ## Closh
 ln -s $DOTFILES/clojure/closhrc $HOME/.closhrc
