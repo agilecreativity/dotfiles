@@ -34,7 +34,15 @@
  ;;   :test {:extra-paths ["test"]}
  ;; }
 
- :aliases {;; clj -A:rebel
+ :aliases {;; clj -M:check
+           :check
+           {:extra-deps
+            {com.github.athos/clj-check
+             {:git/tag "0.1.0"
+              :git/sha "0ca84df"}}
+              :main-opts ["-m" "clj-check.check"]}
+
+           ;; clj -A:rebel
            :rebel {:extra-deps {com.bhauman/rebel-readline {:mvn/version "RELEASE"}}
                    :main-opts ["-m" "rebel-readline.main"]}
 
