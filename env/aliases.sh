@@ -8,11 +8,11 @@ alias g-script='cd ~/apps/pro-scripts/'
 ## }}}
 
 # Useful aliases {{{
-alias v-a-pub='vim ~/apps/dotfiles/env/aliases.sh'
-alias v-e-pub='vim ~/apps/dotfiles/env/env.sh'
+alias v-a-pub='cd ~/apps/dotfiles && vim ~/apps/dotfiles/env/aliases.sh'
+alias v-e-pub='cd ~/apps/dotfiles && vim ~/apps/dotfiles/env/env.sh'
 
-alias v-a='vim ~/apps/private-dotfiles/env/aliases.sh'
-alias v-e='vim ~/apps/private-dotfiles/env/env.sh'
+alias v-a='cd ~/apps/private-dotfiles && vim ~/apps/private-dotfiles/env/aliases.sh'
+alias v-e='cd ~/apps/private-dotfiles && vim ~/apps/private-dotfiles/env/env.sh'
 alias v='vim'
 alias vn='vim -c "NERDTree"'
 alias vt='vim -c "CommandT"'
