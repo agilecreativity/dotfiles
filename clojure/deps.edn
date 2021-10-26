@@ -17,7 +17,7 @@
  ;; External dependencies
 
  ;; :deps {
- ;;   org.clojure/clojure {:mvn/version "1.9.0"}
+ ;;   org.clojure/clojure {:mvn/version "1.10.3"}
  ;; }
 
  ;; Aliases
@@ -48,18 +48,18 @@
 
            ;; clj -A:depify
            ;; clj -A:depify | clj -A:zprint > deps.edn.tmp ; mv deps.edn.tmp deps.edn '
-           :depify {:extra-deps {org.clojure/clojure {:mvn/version "1.9.0"}
+           :depify {:extra-deps {org.clojure/clojure {:mvn/version "1.10.3"}
                                  depify/depify {:git/url "https://github.com/hagmonk/depify"
                                                 :sha "04329744872890711dbba8939a16e9987dd33bb3"}}
                     :main-opts ["-m" "depify.project"]}
 
            ;; clj -A:zprint
-           :zprint {:extra-deps {org.clojure/clojure {:mvn/version "1.9.0"}
+           :zprint {:extra-deps {org.clojure/clojure {:mvn/version "1.10.3"}
                                  zprint/zprint {:mvn/version "0.5.3"}}
                     :main-opts ["-m" "zprint.main"]}
 
            ;; clj -X:new create :name net.b12n/myapp && cd myapp && clj -M -m net.b12n.myapp
-           :new {:extra-deps {seancorfield/clj-new {:mvn/version "1.1.228"}}
+           :new {:extra-deps {com.github.seancorfield/clj-new {:mvn/version "1.1.228"}}
                  :ns-default clj-new
                  :exec-args {:template "app"}}
 
@@ -67,7 +67,7 @@
            ;; clj -X:depstar uberjar :jar MyProject.jar
            :depstar
            {:extra-deps
-            {seancorfield/depstar {:mvn/version "1.1.136"}}
+            {com.github.seancorfield/depstar {:mvn/version "1.1.136"}}
             :ns-default hf.depstar
             ;;:exec-args {}
             }
@@ -78,7 +78,7 @@
                       :main-opts ["-m" "antq.core"]}
            }
 
- :deps {org.clojure/clojure {:mvn/version "1.10.1"}
+ :deps {org.clojure/clojure {:mvn/version "1.10.3"}
         zprint/zprint {:mvn/version "0.5.3"}}
 
  ;; Provider attributes
