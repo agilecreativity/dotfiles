@@ -94,7 +94,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(common-aliases gitignore git docker docker-compose lein bundler)
-plugins=(common-aliases gitignore git docker lein)
+plugins=(common-aliases gitignore git docker lein asdf)
 
 # User configuration
 
@@ -211,3 +211,9 @@ _fzf_compgen_dir() {
 ## ========================================= ##
 ## Testing only with $brew install starship
 #eval "$(starship init zsh)"
+
+. /usr/local/opt/asdf/libexec/asdf.sh
+
+. /usr/local/opt/asdf/libexec/asdf.sh
+
+. /usr/local/opt/asdf/libexec/asdf.sh
