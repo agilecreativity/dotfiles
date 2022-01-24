@@ -35,40 +35,23 @@
                                rewrite-clj.zip/edit->                      clojure.core/->
                                rewrite-clj.zip.subedit/edit->              clojure.core/->
                                rewrite-clj.zip.subedit/subedit->           clojure.core/->}}
-
- :cljfmt {:align-associative? false
-          :indentation? true
-          :remove-consecutive-blank-lines? true
-          :remove-multiple-non-indenting-spaces? true
-          :remove-surrounding-whitespace? true
-          :remove-trailing-whitespace? true
-          :split-keypairs-over-multiple-lines? true}
-
+ :cljfmt {:remove-multiple-non-indenting-spaces? true}
  :linters {:unused-public-var {:exclude-when-defined-by #{state-flow.cljtest/defflow}
                                :exclude #{run-dev
                                           servlet-init
                                           servlet-destroy
                                           servlet-service}}}
 
- :source-paths #{"src" "test" "dev" #_"postman"}
-
+ :source-paths #{"src" "test" "dev"}
  :use-metadata-for-privacy? true
-
  :keep-require-at-start? false
-
  :show-docs-arity-on-same-line? true
-
  :text-document-sync-kind :full
-
  :semantic-tokens? true
-
  :auto-add-ns-to-new-files? true
-
  :lint-project-files-after-startup? true
-
  ;; :additional-snippets [{:name "wrap-let-sexpr$"
  ;;                        :detail "Wrap in let sexpr"
  ;;                        :snippet "(let [$1] $0$current-form)"}]
-
  :dependency-scheme "jar"
  }
