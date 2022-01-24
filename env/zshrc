@@ -211,9 +211,3 @@ _fzf_compgen_dir() {
 ## ========================================= ##
 ## Testing only with $brew install starship
 #eval "$(starship init zsh)"
-
-. /usr/local/opt/asdf/libexec/asdf.sh
-
-. /usr/local/opt/asdf/libexec/asdf.sh
-
-. /usr/local/opt/asdf/libexec/asdf.sh
