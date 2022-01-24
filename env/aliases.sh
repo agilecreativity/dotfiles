@@ -29,9 +29,6 @@ alias mv='nocorrect mv'
 alias rm='nocorrect rm'
 alias w3m='noglob w3m -no-mouse'
 alias wget='noglob wget'
-
-# When working with Vagrant
-alias ssh-vagrant='ssh deploy@33.33.33.33'
 ## }}}
 
 ## Git related aliases {{{
@@ -43,6 +40,7 @@ alias gd5='git diff HEAD~5'
 alias gd6='git diff HEAD~6'
 alias gd7='git diff HEAD~7'
 alias gd8='git diff HEAD~8'
+alias gd9='git diff HEAD~9'
 
 ## Skip non-ascii files
 alias gn1='file $(git diff --name-only HEAD~1) | grep -i ASCII | cut -d: -f1'
@@ -53,6 +51,7 @@ alias gn5='file $(git diff --name-only HEAD~5) | grep -i ASCII | cut -d: -f1'
 alias gn6='file $(git diff --name-only HEAD~6) | grep -i ASCII | cut -d: -f1'
 alias gn7='file $(git diff --name-only HEAD~7) | grep -i ASCII | cut -d: -f1'
 alias gn8='file $(git diff --name-only HEAD~8) | grep -i ASCII | cut -d: -f1'
+alias gn9='file $(git diff --name-only HEAD~9) | grep -i ASCII | cut -d: -f1'
 
 ## Skip non-ascii files
 alias vd1='vim `file $(git diff --name-only HEAD~1) | grep -i ASCII | cut -d: -f1`'
@@ -63,6 +62,7 @@ alias vd5='vim `file $(git diff --name-only HEAD~5) | grep -i ASCII | cut -d: -f
 alias vd6='vim `file $(git diff --name-only HEAD~6) | grep -i ASCII | cut -d: -f1`'
 alias vd7='vim `file $(git diff --name-only HEAD~7) | grep -i ASCII | cut -d: -f1`'
 alias vd8='vim `file $(git diff --name-only HEAD~8) | grep -i ASCII | cut -d: -f1`'
+alias vd9='vim `file $(git diff --name-only HEAD~9) | grep -i ASCII | cut -d: -f1`'
 
 alias gr1='git rebase -i HEAD~1'
 alias gr2='git rebase -i HEAD~2'
@@ -72,6 +72,7 @@ alias gr5='git rebase -i HEAD~5'
 alias gr6='git rebase -i HEAD~6'
 alias gr7='git rebase -i HEAD~7'
 alias gr8='git rebase -i HEAD~8'
+alias gr9='git rebase -i HEAD~9'
 
 alias gaa='git add --all ./'
 alias gca='git commit -am 'WIP''
