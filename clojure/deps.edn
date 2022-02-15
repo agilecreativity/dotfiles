@@ -73,11 +73,25 @@
             }
 
            ;; https://github.com/liquidz/antq
-           ;; clojure -A:outdated
+           ;; clojure -M:outdated
            :outdated {:extra-deps {antq/antq {:mvn/version "RELEASE"}}
                       :main-opts ["-m" "antq.core"]}
-           }
 
+           ;; clojure -M:cider-clj
+           :cider-clj {:extra-deps {cider/cider-nrepl {:mvn/version "0.26.0"}}
+                       :main-opts ["-m" "nrepl.cmdline"
+                                   "--middleware" "[cider.nrepl/cider-middleware]"]}
+           ;; clojure -M:cider-cls
+           :cider-cljs {:extra-deps {org.clojure/clojurescript {:mvn/version "1.10.339"}
+                                     cider/cider-nrepl {:mvn/version "0.26.0"}
+                                     cider/piggieback {:mvn/version "0.5.1"}}
+                        :main-opts ["-m" "nrepl.cmdline"
+                                    "--middleware"
+                                    "[cider.nrepl/cider-middleware,cider.piggieback/wrap-cljs-repl]"]}
+
+           ;;:deps {:extra-deps {org.clojure/tools.deps.alpha {:mvn/version "0.9.884"}}}
+           ;;:test {:extra-paths ["test"]}
+           }
  :deps {org.clojure/clojure {:mvn/version "1.10.3"}
         zprint/zprint {:mvn/version "0.5.3"}}
 
