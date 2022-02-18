@@ -74,17 +74,25 @@
 
            ;; https://github.com/liquidz/antq
            ;; clojure -M:outdated
-           :outdated {:extra-deps {antq/antq {:mvn/version "RELEASE"}}
+           :outdated {:extra-deps {antq/antq {:mvn/version "RELEASE"}
+                                   #_#_djblue/portal {:mvn/version "0.20.1"}}
                       :main-opts ["-m" "antq.core"]}
 
+           ;; https://docs.cider.mx/cider/basics/up_and_running.html
            ;; clojure -M:cider-clj
-           :cider-clj {:extra-deps {cider/cider-nrepl {:mvn/version "0.26.0"}}
+           :cider-clj {:extra-deps {cider/cider-nrepl {:mvn/version "0.27.4"}
+                                    com.bhauman/rebel-readline {:mvn/version "0.1.4"}
+                                    djblue/portal {:mvn/version "0.20.1"}
+                                    nrepl/nrepl {:mvn/version "0.9.0"}
+                                    refactor-nrepl/refactor-nrepl {:mvn/version "3.1.0"}}
                        :main-opts ["-m" "nrepl.cmdline"
-                                   "--middleware" "[cider.nrepl/cider-middleware]"]}
+                                   "--middleware"
+                                   "[refactor-nrepl.middleware/wrap-refactor,cider.nrepl/cider-middleware]"]}
            ;; clojure -M:cider-cls
-           :cider-cljs {:extra-deps {org.clojure/clojurescript {:mvn/version "1.10.339"}
-                                     cider/cider-nrepl {:mvn/version "0.26.0"}
-                                     cider/piggieback {:mvn/version "0.5.1"}}
+           :cider-cljs {:extra-deps {cider/cider-nrepl {:mvn/version "0.27.4"}
+                                     cider/piggieback {:mvn/version "0.5.1"}
+                                     djblue/portal {:mvn/version "0.20.1"}
+                                     org.clojure/clojurescript {:mvn/version "1.10.339"}}
                         :main-opts ["-m" "nrepl.cmdline"
                                     "--middleware"
                                     "[cider.nrepl/cider-middleware,cider.piggieback/wrap-cljs-repl]"]}
