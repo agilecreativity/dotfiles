@@ -1,7 +1,0 @@
-#!/bin/sh
-## Assumed that you have done the ./00-setup-oh-my-zsh script
-## Setup and make sure that the ~/.ssh is up with the right credentials
-mkdir -p ~/.ssh
-chmod 0700 ~/.ssh
-cp ~/apps/private-dotfiles/github/dot-ssh/* ~/.ssh/
-cd ~/.ssh && ./setup-ssh-keys
