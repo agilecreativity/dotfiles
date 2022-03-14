@@ -1,4 +1,5 @@
 ;; ---------------------------------------------------- ;;
+;; https://clojure-lsp.io/settings/#initialization-options
 ;; https://clojure-lsp.github.io/clojure-lsp/settings/
 ;; https://github.com/ericdallo/dotfiles/blob/master/.lsp/config.edn - the sample config
 ;; https://github.com/weavejester/cljfmt/blob/master/cljfmt/resources/cljfmt/indents/clojure.clj - official indentation rules
