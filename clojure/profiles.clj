@@ -1,7 +1,8 @@
 ;; https://github.com/technomancy/leiningen/blob/stable/doc/PROFILES.md
 {:provided
  {:dependencies
-  [[djblue/portal "0.21.2"]]}
+  [[djblue/portal "0.21.2"]
+   [fipp "0.6.24"]]}
  :user
  {:plugins
   [[cider/cider-nrepl "0.27.4"]
