@@ -207,10 +207,3 @@ _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
 ## }}
-## ========================================= ##
-## ========================================= ##
-## Testing only with $brew install starship
-#eval "$(starship init zsh)"
-
-## Use asdf if we have one install, if not ignore
-[ -f /usr/local/opt/asdf/libexec/asdf.sh ] && . /usr/local/opt/asdf/libexec/asdf.sh
