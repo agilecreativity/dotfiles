@@ -1,46 +1,17 @@
 ;; All available settings and its default values
 ;; Check the settings documentation section for more details of each one.
-{:source-paths #{"src" "test"} ;; auto-resolved for deps.edn, project.clj or bb.edn projects
- :source-aliases #{:dev :test}
- :project-specs [] ;; Check the default at clojure-lsp.crawler/default-project-specs
- :ignore-classpath-directories false
- :use-source-paths-from-classpath true
- :lint-project-files-after-startup? true
- :notify-references-on-file-change true
- :linters {:clj-kondo {:level :on
-                       :report-duplicates true
-                       :ns-exclude-regex ""
-                       :async-custom-lint? false}}
- :clean {:automatically-after-ns-refactor true
-         :ns-inner-blocks-indentation :next-line
-         :sort {:ns true
-                :require true
-                :import true
-                :refer {:max-line-length 80}}}
- :hover {:hide-file-location? false
-         :arity-on-same-line? false
-         :clojuredocs true}
- :code-lens {:segregate-test-references true}
- :semantic-tokens? true
- :use-metadata-for-privacy? false
- :auto-add-ns-to-new-files? true
- :keep-parens-when-threading? false
- :document-formatting? true
- :document-range-formatting? true
- :dependency-scheme :zip
- :text-document-sync-kind :full
- :cljfmt-config-path ".cljfmt.edn"
- :cljfmt {:remove-multiple-non-indenting-spaces? true}
- :stubs {:generation {:namespaces #{}
-                      :output-dir ".lsp/.cache/stubs"
-                      :java-command "java"}
-         :extra-dirs []}
- :additional-snippets []
- :classpath-config-paths []
- :api {:exit-on-errors? true}
- ;:show-docs-arity-on-same-line? false ; deprecated, will be removed soon, use :hover :arity-on-same-line?
- ;:lens-segregate-test-references true ; deprecated, will be removed soon, use :code-lens :segregate-test-references instead.
- :copy-kondo-configs? true
- :sqlite-db-path ".lsp/sqlite.db" ; deprecated, will be removed soon, use :cache-path instead.
- :cache-path ".lsp/.cache"
- :log-path "/tmp/clojure-lsp.*.out"}
+;; See: https://clojure-lsp.io/settings/#global
+{:cljfmt
+ {#_:indents #_{#re ".*" ns [[:inner 0] [:inner 1]]}
+  :indentation?                           true
+  :insert-missing-whitespace?             true
+   :remove-consecutive-blank-lines?       true
+   :remove-multiple-non-indenting-spaces? true ;; NOTE: default is false
+   :remove-surrounding-whitespace?        true
+   :remove-trailing-whitespace?           true
+   :split-keypairs-over-multiple-lines?   false
+   :sort-ns-references?                   false
+   #_:indents   #_default-indents
+   :alias-map {}}
+ :use-metadata-for-privacy? true
+ :auto-add-ns-to-new-files? true}

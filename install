@@ -22,7 +22,7 @@ rm -rf $HOME/.boot/profile.boot
 rm -rf $HOME/.clojure/deps.edn
 rm -rf $HOME/.closhrc
 rm -rf $HOME/.lein/profiles.clj
-rm -rf $HOME/.lsp
+rm -rf $HOME/.config/clojure-lsp
 rm -rf $HOME/.shadow-cljs/config.edn
 rm -rf $HOME/.shadow-cljs
 
@@ -48,10 +48,11 @@ mkdir -p $HOME/.clojure
 ln -s $DOTFILES/clojure/deps.edn $HOME/.clojure/deps.edn
 
 ## Configuration for lsp mode
-mkdir -p $HOME/.lsp
-rm -rf $HOME/.lsp/config.edn
-ln -s $DOTFILES/clojure/lsp-config.edn $HOME/.lsp/config.edn
+mkdir -p $HOME/.config/clojure-lsp
+rm -rf $HOME/.config/clojure-lsp/config.edn
+ln -s $DOTFILES/clojure/lsp-config.edn $HOME/.config/clojure-lsp/config.edn
 
+## TODO: How to keep this one up-to-date?
 rm -rf $HOME/bin/clojure-lsp-server-clj-kondo
 ln -s $DOTFILES/libs/lsp-server/clojure-lsp-server-clj-kondo $HOME/bin/clojure-lsp-server-clj-kondo
 
