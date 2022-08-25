@@ -1,9 +1,7 @@
-#/usr/bin/env bash
-set -exo pipefail
+#!/usr/bin/env bash
+set -eo pipefail
 
-# The public dotfiles
 DOTFILES=$HOME/apps/dotfiles
-PRIVATE_DOTFILES=$HOME/apps/private-dotfiles
 
 echo "Remove old symlinks..."
 rm -rf $HOME/.ackrc
@@ -16,16 +14,6 @@ rm -rf $HOME/.zshrc
 rm -rf $HOME/apps/oh-my-zsh/themes/ys-custom.zsh-theme
 rm -rf $HOME/.pryrc
 
-## Clojure Development
-rm -rf $HOME/.boot/boot.properties
-rm -rf $HOME/.boot/profile.boot
-rm -rf $HOME/.clojure/deps.edn
-rm -rf $HOME/.closhrc
-rm -rf $HOME/.lein/profiles.clj
-rm -rf $HOME/.config/clojure-lsp
-rm -rf $HOME/.shadow-cljs/config.edn
-rm -rf $HOME/.shadow-cljs
-
 echo "Create new symlinks..."
 ln -s $DOTFILES/env/zshrc      $HOME/.zshrc
 ln -s $DOTFILES/ack/ackrc      $HOME/.ackrc
@@ -35,29 +23,3 @@ ln -s $DOTFILES/editorconfig   $HOME/.editorconfig
 ln -s $DOTFILES/pryrc          $HOME/.pryrc
 ln -s $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
 ln -s $DOTFILES/xrayconfig     $HOME/.xrayconfig
-
-## For Clojure Development
-mkdir -p ~/.boot
-ln -s $DOTFILES/clojure/boot.properties $HOME/.boot/boot.properties
-ln -s $DOTFILES/clojure/profile.boot    $HOME/.boot/profile.boot
-
-mkdir -p $HOME/.lein
-ln -s $DOTFILES/clojure/profiles.clj $HOME/.lein/profiles.clj
-
-mkdir -p $HOME/.clojure
-ln -s $DOTFILES/clojure/deps.edn $HOME/.clojure/deps.edn
-
-## Configuration for lsp mode
-mkdir -p $HOME/.config/clojure-lsp
-rm -rf $HOME/.config/clojure-lsp/config.edn
-ln -s $DOTFILES/clojure/lsp-config.edn $HOME/.config/clojure-lsp/config.edn
-
-## TODO: How to keep this one up-to-date?
-rm -rf $HOME/bin/clojure-lsp-server-clj-kondo
-ln -s $DOTFILES/libs/lsp-server/clojure-lsp-server-clj-kondo $HOME/bin/clojure-lsp-server-clj-kondo
-
-mkdir -p $HOME/.shadow-cljs
-ln -s $DOTFILES/clojure/shadow-cljs-config.edn $HOME/.shadow-cljs/config.edn
-
-## Closh
-ln -s $DOTFILES/clojure/closhrc $HOME/.closhrc
