@@ -1,5 +1,4 @@
 #!/bin/sh
-## Note: this is the oh-my-zsh and my private-dotfiles
 mkdir -p $HOME/apps
 
 ## Let's start clean shall we?
@@ -13,11 +12,6 @@ git clone https://github.com/agilecreativity/private-dotfiles.git $HOME/apps/pri
 
 ## Install the main dotfiles
 git clone https://github.com/agilecreativity/dotfiles.git $HOME/apps/dotfiles
-
-## TODO: move this to the optional steps e.g. 03-setup-vim-and-misc
-## Then clone the rest of the dotfiles
-#git clone git@github.com:agilecreativity/dotvim.git ~/apps/dotvim
-#git clone git@github.com:agilecreativity/dotemacs-prelude.git ~/apps/dotemacs-prelude
 
 ## Setup fonts for use with Emacs
 #sh -c "$(curl -fsSL https://raw.githubusercontent.com/agilecreativity/sudo-make-install/master/scripts/install-source-code-pro-fonts)"
