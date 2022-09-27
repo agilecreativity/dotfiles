@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-set -eo pipefail
-## Make sure you have cloned private-dotfiles
-#git clone git@github.com:agilecreativity/private-dotfiles.git ~/apps/private-dotfiles
-# Then run the setup script
-cd ~/apps/private-dotfiles/dot-config/ssh-keys && ./setup-ssh-keys

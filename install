@@ -2,24 +2,71 @@
 set -eo pipefail
 
 DOTFILES=$HOME/apps/dotfiles
+DOTFILES_PRIVATE=$HOME/apps/private-dotfiles
 
-echo "Remove old symlinks..."
-rm -rf $HOME/.ackrc
-rm -rf $HOME/.agignore
-rm -rf $HOME/.aprc
-rm -rf $HOME/.editorconfig
-rm -rf $HOME/.tmux.conf
-rm -rf $HOME/.xrayconfig
-rm -rf $HOME/.zshrc
-rm -rf $HOME/apps/oh-my-zsh/themes/ys-custom.zsh-theme
-rm -rf $HOME/.pryrc
+function setup_oh_my_zsh() {
+    mkdir -p $HOME/apps
 
-echo "Create new symlinks..."
-ln -s $DOTFILES/env/zshrc      $HOME/.zshrc
-ln -s $DOTFILES/ack/ackrc      $HOME/.ackrc
-ln -s $DOTFILES/agignore       $HOME/.agignore
-ln -s $DOTFILES/aprc           $HOME/.aprc
-ln -s $DOTFILES/editorconfig   $HOME/.editorconfig
-ln -s $DOTFILES/pryrc          $HOME/.pryrc
-ln -s $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
-ln -s $DOTFILES/xrayconfig     $HOME/.xrayconfig
+    ## Let's start clean shall we?
+    rm -rf ~/apps/oh-my-zsh
+
+    ## Note: need to type the exit at the end of the process
+    export ZSH="$HOME/apps/oh-my-zsh"; sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+    ## Install the main dotfiles
+    git clone https://github.com/agilecreativity/dotfiles.git $DOTFILES 
+
+    ## TODO: how to make this work when we don't yet have the ssh keys?
+    git clone git@github-agc.com:agilecreativity/private-dotfiles.git $DOTFILES_PRIVATE 
+}
+
+function setup_config() {
+    echo "Remove old symlinks..."
+    rm -rf $HOME/.ackrc
+    rm -rf $HOME/.agignore
+    rm -rf $HOME/.aprc
+    rm -rf $HOME/.editorconfig
+    rm -rf $HOME/.tmux.conf
+    rm -rf $HOME/.xrayconfig
+    rm -rf $HOME/.zshrc
+    rm -rf $HOME/apps/oh-my-zsh/themes/ys-custom.zsh-theme
+    rm -rf $HOME/.pryrc
+
+    echo "Create new symlinks..."
+    ln -s $DOTFILES/env/zshrc      $HOME/.zshrc
+    ln -s $DOTFILES/ack/ackrc      $HOME/.ackrc
+    ln -s $DOTFILES/agignore       $HOME/.agignore
+    ln -s $DOTFILES/aprc           $HOME/.aprc
+    ln -s $DOTFILES/editorconfig   $HOME/.editorconfig
+    ln -s $DOTFILES/pryrc          $HOME/.pryrc
+    ln -s $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
+    ln -s $DOTFILES/xrayconfig     $HOME/.xrayconfig
+}
+
+function setup_ssh_keys() {
+    cd $DOTFILES_PRIVATE/dot-config/ssh-keys && ./setup-ssh-keys
+}
+
+function setup_dotvim() {
+  src_dir=$HOME/apps/arch2kx--dotfiles
+  rm -rf ~/.vim && mkdir -p ~/.vim
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+  # Then setup the vimrc
+  rm -rf ~/.vimrc
+  ln -fs $src_dir/vimrc ~/.vimrc
+  echo "You may now open Vim and :PlugInstall"
+}
+
+function setup_rbenv() {
+    rm -rf ~/.rbenv
+    git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+    mkdir -p ~/.rbenv/plugins
+    git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+}
+
+#setup_oh_my_zsh()
+setup_config
+setup_ssh_keys
+setup_dotvim
+#setup_rbenv
