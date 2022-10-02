@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -eo pipefail
+set -eox pipefail
 
 DOTFILES=$HOME/apps/dotfiles
 DOTFILES_PRIVATE=$HOME/apps/private-dotfiles
@@ -29,7 +29,6 @@ function setup_config() {
     rm -rf $HOME/.tmux.conf
     rm -rf $HOME/.xrayconfig
     rm -rf $HOME/.zshrc
-    #rm -rf $HOME/.oh-my-zsh/themes/ys-custom.zsh-theme
     rm -rf $HOME/.pryrc
 
     echo "Create new symlinks..."
@@ -65,7 +64,6 @@ function setup_rbenv() {
     git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 }
 
-#setup_oh_my_zsh()
 setup_config
 setup_ssh_keys
 #setup_dotvim
