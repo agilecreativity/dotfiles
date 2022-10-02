@@ -8,10 +8,10 @@ function setup_oh_my_zsh() {
     mkdir -p $HOME/apps
 
     ## Let's start clean shall we?
-    rm -rf ~/apps/oh-my-zsh
+    rm -rf ~/.oh-my-zsh
 
     ## Note: need to type the exit at the end of the process
-    export ZSH="$HOME/apps/oh-my-zsh"; sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
     ## Install the main dotfiles
     git clone https://github.com/agilecreativity/dotfiles.git $DOTFILES 
@@ -29,7 +29,7 @@ function setup_config() {
     rm -rf $HOME/.tmux.conf
     rm -rf $HOME/.xrayconfig
     rm -rf $HOME/.zshrc
-    rm -rf $HOME/apps/oh-my-zsh/themes/ys-custom.zsh-theme
+    #rm -rf $HOME/.oh-my-zsh/themes/ys-custom.zsh-theme
     rm -rf $HOME/.pryrc
 
     echo "Create new symlinks..."
@@ -68,5 +68,5 @@ function setup_rbenv() {
 #setup_oh_my_zsh()
 setup_config
 setup_ssh_keys
-setup_dotvim
+#setup_dotvim
 #setup_rbenv
