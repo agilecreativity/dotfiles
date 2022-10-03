@@ -8,6 +8,15 @@
 # or `git clone git@github.com:powerline/fonts.git; cd fonts; ./install.sh`
 # also https://gist.github.com/kevin-smets/8568070
 
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
 ## See: https://github.com/robbyrussell/oh-my-zsh/wiki/themes
 platform=`uname`
 if [[ $platform == 'Linux' ]]; then
@@ -76,10 +85,10 @@ HIST_STAMPS="yyyy-mm-dd"
 #plugins=(common-aliases gitignore git docker docker-compose lein bundler)
 plugins=(common-aliases gitignore git docker lein asdf)
 
-# User configuration
+## User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
-#source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
