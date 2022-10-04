@@ -161,9 +161,10 @@ if [[ $platform == 'Darwin' ]]; then
   #   export PATH=$(pyenv root)/shims:$PATH
   # fi
 elif [[ $platform == 'Linux' ]]; then
-  ## Linux specific settings
-  export PATH="/home/linuxbrew/.linuxbrew/opt/cython/bin:$PATH"
-  true
+  ## Note: we install linux brew to `/opt/local/homebrew` directory
+  if [ -d /opt/local/homebrew ]; then
+    export PATH="/opt/local/homebrew/bin:$PATH"
+  fi
 fi
 
 ## Override the aliase defined by oh-myzsh in common-aliases and use fd
