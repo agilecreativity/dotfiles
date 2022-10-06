@@ -149,7 +149,7 @@ if [ -d ~/.rbenv ]; then
 fi
 
 ## Make sure that /usr/local/bin comes first in the PATH
-export PATH=/usr/local/bin:$PATH
+# export PATH=/usr/local/bin:$PATH
 
 if [[ $platform == 'Darwin' ]]; then
   ## OSX specific settings
@@ -199,3 +199,8 @@ _fzf_compgen_dir() {
 ## }}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+## Use asdf if we have one install, if not ignore
+[ -f /usr/local/opt/asdf/libexec/asdf.sh ] && . /usr/local/opt/asdf/libexec/asdf.sh
+[ -f ~/.asdf/asdf.sh ] && . ~/.asdf/asdf.sh
+[ -d /usr/local/opt/openssl@3/bin ] && PATH="/usr/local/opt/openssl@3/bin:$PATH"

@@ -4,22 +4,6 @@ set -eox pipefail
 DOTFILES=$HOME/apps/dotfiles
 DOTFILES_PRIVATE=$HOME/apps/private-dotfiles
 
-function setup_oh_my_zsh() {
-    mkdir -p $HOME/apps
-
-    ## Let's start clean shall we?
-    rm -rf ~/.oh-my-zsh
-
-    ## Note: need to type the exit at the end of the process
-    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-    ## Install the main dotfiles
-    git clone https://github.com/agilecreativity/dotfiles.git $DOTFILES
-
-    ## TODO: how to make this work when we don't yet have the ssh keys?
-    git clone git@github-agc.com:agilecreativity/private-dotfiles.git $DOTFILES_PRIVATE
-}
-
 function setup_config() {
     echo "Remove old symlinks..."
     rm -rf $HOME/.ackrc
@@ -64,6 +48,10 @@ function setup_rbenv() {
     git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 }
 
+## NOTE: we should have install the following
+## 1) oh-my-zsh to ~/.oh-my-zsh
+## 2) clone ~/apps/dotfiles
+## 3) clone ~/apps/private-dotfiles
 setup_config
 setup_ssh_keys
 #setup_dotvim
